@@ -9,12 +9,12 @@ const About = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             About <span className="bg-gradient-primary bg-clip-text text-transparent">Me</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-primary mx-auto"></div>
+          <div className="w-20 h-1 bg-gradient-primary mx-auto animate-scale-in"></div>
         </div>
 
-        <Card className="p-8 md:p-12 shadow-soft hover:shadow-glow transition-all duration-300 animate-slide-in">
+        <Card className="p-8 md:p-12 shadow-soft hover:shadow-glow transition-all duration-500 animate-slide-in hover:-translate-y-1">
           <div className="flex items-start gap-6 mb-6">
-            <div className="p-4 bg-accent rounded-lg">
+            <div className="p-4 bg-accent rounded-lg group-hover:bg-gradient-primary transition-all duration-300">
               <GraduationCap className="h-8 w-8 text-primary" />
             </div>
             <div className="flex-1">

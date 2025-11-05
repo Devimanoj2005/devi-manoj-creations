@@ -33,7 +33,7 @@ const Skills = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Technical <span className="bg-gradient-primary bg-clip-text text-transparent">Skills</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-primary mx-auto"></div>
+          <div className="w-20 h-1 bg-gradient-primary mx-auto animate-scale-in"></div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -42,21 +42,21 @@ const Skills = () => {
             return (
               <Card 
                 key={index} 
-                className="p-6 hover:shadow-glow transition-all duration-300 animate-slide-in"
+                className="p-6 hover:shadow-glow transition-all duration-500 animate-slide-in hover:-translate-y-1 group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-accent rounded-lg">
-                    <Icon className="h-5 w-5 text-primary" />
+                  <div className="p-2 bg-accent rounded-lg group-hover:bg-gradient-primary transition-all duration-300">
+                    <Icon className="h-5 w-5 text-primary group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <h3 className="text-xl font-semibold">{category.title}</h3>
+                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">{category.title}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
                     <Badge 
                       key={skillIndex} 
                       variant="outline"
-                      className="border-primary/30 hover:border-primary hover:bg-accent transition-all duration-300"
+                      className="border-primary/30 hover:border-primary hover:bg-accent transition-all duration-300 hover:scale-105 transform"
                     >
                       {skill}
                     </Badge>
