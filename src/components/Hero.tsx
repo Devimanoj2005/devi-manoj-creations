@@ -51,7 +51,7 @@ const Hero = () => {
               </Button>
             </div>
             <div className="flex gap-4 justify-center md:justify-start pt-4 animate-fade-in-up opacity-0" style={{ animationDelay: '1s' }}>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 transform">
+              <a href="https://github.com/Devimanoj2005" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 transform">
                 <Github className="h-6 w-6" />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 transform">
