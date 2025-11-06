@@ -3,6 +3,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Heart, MessageCircle, DollarSign, Book, CheckSquare, FileText, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import relationshipImg from "@/assets/projects/relationship-app-1.jpg";
+import counselingImg from "@/assets/projects/counseling-app-1.jpg";
+import expenseImg from "@/assets/projects/expense-tracker-1.jpg";
+import dyslexiaImg from "@/assets/projects/dyslexia-website-1.jpg";
+import todoImg from "@/assets/projects/todo-app-1.jpg";
+import blogImg from "@/assets/projects/blog-app-1.jpg";
 
 export const projects = [
   {
@@ -14,6 +20,7 @@ export const projects = [
     tags: ["Mobile", "Communication", "React Native"],
     features: ["Daily conversation prompts", "Shared calendar", "Private messaging", "Activity suggestions", "Milestone tracking"],
     technologies: ["React Native", "Firebase", "Push Notifications", "Redux"],
+    screenshots: [relationshipImg],
   },
   {
     id: "counseling-platform",
@@ -24,6 +31,7 @@ export const projects = [
     tags: ["Web App", "Privacy", "Mental Health"],
     features: ["Anonymous sessions", "Video counseling", "Secure messaging", "Counselor verification", "Resource library"],
     technologies: ["React", "WebRTC", "End-to-End Encryption", "Node.js"],
+    screenshots: [counselingImg],
   },
   {
     id: "expense-tracker",
@@ -34,6 +42,7 @@ export const projects = [
     tags: ["Web App", "Finance", "Data Visualization"],
     features: ["Expense categorization", "Budget planning", "Visual analytics", "Receipt scanning", "Export reports"],
     technologies: ["React", "Chart.js", "LocalStorage", "Tailwind CSS"],
+    screenshots: [expenseImg],
   },
   {
     id: "dyslexia-website",
@@ -44,6 +53,7 @@ export const projects = [
     tags: ["Accessibility", "Web", "Inclusive Design"],
     features: ["Text-to-speech", "Dyslexia-friendly fonts", "Color adjustments", "Simplified layouts", "Reading ruler"],
     technologies: ["React", "Web Speech API", "ARIA", "CSS Variables"],
+    screenshots: [dyslexiaImg],
   },
   {
     id: "todo-app",
@@ -54,6 +64,7 @@ export const projects = [
     tags: ["React", "Productivity", "Local Storage"],
     features: ["Task management", "Priority levels", "Category filters", "Due dates", "Persistent storage"],
     technologies: ["React", "React Hooks", "LocalStorage", "Tailwind CSS"],
+    screenshots: [todoImg],
   },
   {
     id: "blog-app",
@@ -64,6 +75,7 @@ export const projects = [
     tags: ["Next.js", "SSR", "Tailwind CSS"],
     features: ["Server-side rendering", "Markdown support", "Code highlighting", "Comment system", "Admin dashboard"],
     technologies: ["Next.js", "React Query", "Tailwind CSS", "MDX"],
+    screenshots: [blogImg],
   },
 ];
 

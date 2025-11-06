@@ -1,13 +1,17 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, Maximize2 } from "lucide-react";
 import { projects } from "@/components/Projects";
+import ImageLightbox from "@/components/ImageLightbox";
 
 const ProjectDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   
   const project = projects.find(p => p.id === id);
 
@@ -89,6 +93,44 @@ const ProjectDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* Project Screenshots */}
+      {project.screenshots && project.screenshots.length > 0 && (
+        <section className="py-12 px-4 bg-background/50">
+          <div className="container max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center animate-fade-in">
+              Project <span className="bg-gradient-primary bg-clip-text text-transparent">Screenshots</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {project.screenshots.map((screenshot, index) => (
+                <Card
+                  key={index}
+                  className="group relative overflow-hidden cursor-pointer animate-scale-in opacity-0 hover:shadow-glow transition-all duration-500 hover:-translate-y-2"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                  onClick={() => {
+                    setLightboxIndex(index);
+                    setLightboxOpen(true);
+                  }}
+                >
+                  <div className="relative aspect-video overflow-hidden">
+                    <img
+                      src={screenshot}
+                      alt={`${project.title} screenshot ${index + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-black/70 p-4 rounded-full backdrop-blur-sm animate-bounce-slow">
+                        <Maximize2 className="h-8 w-8 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Project Details */}
       <section className="py-12 px-4">
@@ -207,6 +249,15 @@ const ProjectDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      {lightboxOpen && project.screenshots && (
+        <ImageLightbox
+          images={project.screenshots}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+        />
+      )}
     </div>
   );
 };
