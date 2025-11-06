@@ -120,10 +120,23 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
   }
   
   html {
     scroll-behavior: smooth;
+  }
+  
+  /* Smooth theme transitions */
+  *,
+  *::before,
+  *::after {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Preserve animation and transform transitions */
+  [class*="animate-"],
+  [class*="transition-"] {
+    transition: all 0.3s ease;
   }
 }

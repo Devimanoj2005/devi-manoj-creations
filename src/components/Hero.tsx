@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpeg";
+import ThemeToggle from "./ThemeToggle";
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -9,6 +10,11 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-subtle px-4 py-20 overflow-hidden">
+      {/* Theme Toggle - Fixed Position */}
+      <div className="fixed top-6 right-6 z-50 animate-fade-in opacity-0" style={{ animationDelay: '1.2s' }}>
+        <ThemeToggle />
+      </div>
+
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>

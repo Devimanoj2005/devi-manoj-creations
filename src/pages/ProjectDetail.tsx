@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ExternalLink, Github, Maximize2 } from "lucide-react";
 import { projects } from "@/components/Projects";
 import ImageLightbox from "@/components/ImageLightbox";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -33,8 +34,13 @@ const ProjectDetail = () => {
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
+      {/* Theme Toggle - Fixed Position */}
+      <div className="fixed top-6 right-6 z-50 animate-fade-in">
+        <ThemeToggle />
+      </div>
+
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border/50">
+      <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border/50 transition-colors duration-300">
         <div className="container max-w-6xl mx-auto px-4 py-4">
           <Button 
             variant="ghost" 
