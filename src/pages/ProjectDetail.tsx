@@ -86,10 +86,22 @@ const ProjectDetail = () => {
                 ))}
               </div>
               <div className="flex gap-4 animate-fade-in-up opacity-0" style={{ animationDelay: '0.6s' }}>
-                <Button className="bg-gradient-primary hover:shadow-glow transition-all duration-300 hover:scale-110 animate-glow-pulse">
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Live Demo
-                </Button>
+                {project.demoUrl ? (
+                  <Button 
+                    className="bg-gradient-primary hover:shadow-glow transition-all duration-300 hover:scale-110 animate-glow-pulse"
+                    asChild
+                  >
+                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Demo
+                    </a>
+                  </Button>
+                ) : (
+                  <Button className="bg-gradient-primary hover:shadow-glow transition-all duration-300 hover:scale-110 animate-glow-pulse" disabled>
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Live Demo (Coming Soon)
+                  </Button>
+                )}
                 <Button variant="outline" className="border-primary/30 hover:border-primary hover:bg-accent transition-all duration-300 hover:scale-110">
                   <Github className="mr-2 h-4 w-4" />
                   View Code

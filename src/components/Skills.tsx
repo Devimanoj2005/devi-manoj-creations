@@ -42,21 +42,25 @@ const Skills = () => {
             return (
               <Card 
                 key={index} 
-                className="p-6 hover:shadow-glow transition-all duration-500 animate-slide-in hover:-translate-y-1 group"
+                className="relative p-6 hover:shadow-hover transition-all duration-500 animate-slide-in hover:-translate-y-2 group bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-border/60 hover:border-primary/50 overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-accent rounded-lg group-hover:bg-gradient-primary transition-all duration-300">
-                    <Icon className="h-5 w-5 text-primary group-hover:text-white transition-colors duration-300" />
+                {/* Animated gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                <div className="absolute -inset-1 bg-gradient-primary opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
+                
+                <div className="relative flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-gradient-to-br from-accent to-accent/50 rounded-xl group-hover:from-primary group-hover:to-primary-glow transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 transform shadow-soft">
+                    <Icon className="h-6 w-6 text-primary group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">{category.title}</h3>
+                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-300">{category.title}</h3>
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="relative flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
                     <Badge 
                       key={skillIndex} 
                       variant="outline"
-                      className="border-primary/30 hover:border-primary hover:bg-accent transition-all duration-300 hover:scale-105 transform"
+                      className="border-border/60 hover:border-primary/80 hover:bg-gradient-to-r hover:from-accent hover:to-accent/60 transition-all duration-300 hover:scale-110 hover:shadow-soft transform font-medium px-3 py-1.5"
                     >
                       {skill}
                     </Badge>

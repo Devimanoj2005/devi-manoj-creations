@@ -21,6 +21,7 @@ export const projects = [
     features: ["Daily conversation prompts", "Shared calendar", "Private messaging", "Activity suggestions", "Milestone tracking"],
     technologies: ["React Native", "Firebase", "Push Notifications", "Redux"],
     screenshots: [relationshipImg],
+    demoUrl: "https://vercel.com/devimanoj2005s-projects/heartbeat-yryl",
   },
   {
     id: "counseling-platform",
@@ -43,6 +44,7 @@ export const projects = [
     features: ["Expense categorization", "Budget planning", "Visual analytics", "Receipt scanning", "Export reports"],
     technologies: ["React", "Chart.js", "LocalStorage", "Tailwind CSS"],
     screenshots: [expenseImg],
+    demoUrl: "https://vercel.com/devimanoj2005s-projects/fina-sparkle",
   },
   {
     id: "dyslexia-website",
@@ -101,28 +103,33 @@ const Projects = () => {
             return (
               <Card 
                 key={index} 
-                className="group relative overflow-hidden hover:shadow-glow transition-all duration-500 cursor-pointer animate-fade-in border-border/50 hover:border-primary/50 hover:-translate-y-2"
+                className="group relative overflow-hidden hover:shadow-hover transition-all duration-500 cursor-pointer animate-fade-in border-border/60 hover:border-primary/60 hover:-translate-y-3 bg-card/80 backdrop-blur-sm"
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => navigate(`/project/${project.id}`)}
               >
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                {/* Animated gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-8 transition-opacity duration-500"></div>
+                <div className="absolute -inset-1 bg-gradient-primary opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
                 
-                <CardHeader className="relative">
-                  <div className="mb-4 p-3 bg-accent rounded-lg w-fit group-hover:bg-gradient-primary transition-all duration-300 group-hover:scale-110 transform">
-                    <Icon className="h-6 w-6 text-primary group-hover:text-white transition-colors duration-300" />
+                <CardHeader className="relative z-10">
+                  <div className="mb-4 p-4 bg-gradient-to-br from-accent to-accent/50 rounded-xl w-fit group-hover:from-primary group-hover:to-primary-glow transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 transform shadow-soft">
+                    <Icon className="h-7 w-7 text-primary group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <CardTitle className="group-hover:text-primary transition-colors duration-300">
+                  <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300 mb-2">
                     {project.title}
                   </CardTitle>
-                  <CardDescription className="line-clamp-3">
+                  <CardDescription className="line-clamp-3 text-base">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="relative">
-                  <div className="flex flex-wrap gap-2 mb-4">
+                <CardContent className="relative z-10">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="secondary" className="text-xs">
+                      <Badge 
+                        key={tagIndex} 
+                        variant="secondary" 
+                        className="text-xs font-medium px-3 py-1 bg-gradient-to-r from-secondary/20 to-secondary/10 border-secondary/30 hover:from-secondary/30 hover:to-secondary/20 transition-all duration-300"
+                      >
                         {tag}
                       </Badge>
                     ))}
@@ -130,10 +137,10 @@ const Projects = () => {
                   <Button 
                     variant="ghost" 
                     size="sm" 
-                    className="w-full group/btn hover:bg-accent"
+                    className="w-full group/btn hover:bg-gradient-to-r hover:from-accent hover:to-accent/60 font-medium"
                   >
                     <span>View Details</span>
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
                   </Button>
                 </CardContent>
               </Card>
