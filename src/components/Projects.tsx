@@ -1,14 +1,13 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Heart, MessageCircle, DollarSign, Book, CheckSquare, FileText, ArrowRight } from "lucide-react";
+import { Heart, MessageCircle, DollarSign, Book, CheckSquare, ShieldCheck, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import relationshipImg from "@/assets/projects/relationship-app-1.jpg";
 import counselingImg from "@/assets/projects/counseling-app-1.jpg";
 import expenseImg from "@/assets/projects/expense-tracker-1.jpg";
 import dyslexiaImg from "@/assets/projects/dyslexia-website-1.jpg";
 import todoImg from "@/assets/projects/todo-app-1.jpg";
-import blogImg from "@/assets/projects/blog-app-1.jpg";
 
 export const projects = [
   {
@@ -22,6 +21,7 @@ export const projects = [
     technologies: ["React Native", "Firebase", "Push Notifications", "Redux"],
     screenshots: [relationshipImg],
     demoUrl: "https://vercel.com/devimanoj2005s-projects/heartbeat-yryl",
+    githubUrl: "https://github.com/Devimanoj2005/Bloom",
   },
   {
     id: "counseling-platform",
@@ -45,6 +45,7 @@ export const projects = [
     technologies: ["React", "Chart.js", "LocalStorage", "Tailwind CSS"],
     screenshots: [expenseImg],
     demoUrl: "https://vercel.com/devimanoj2005s-projects/fina-sparkle",
+    githubUrl: "https://github.com/Devimanoj2005/fina-sparkle",
   },
   {
     id: "dyslexia-website",
@@ -56,6 +57,7 @@ export const projects = [
     features: ["Text-to-speech", "Dyslexia-friendly fonts", "Color adjustments", "Simplified layouts", "Reading ruler"],
     technologies: ["React", "Web Speech API", "ARIA", "CSS Variables"],
     screenshots: [dyslexiaImg],
+    githubUrl: "https://github.com/Devimanoj2005/sereniSphere",
   },
   {
     id: "todo-app",
@@ -69,15 +71,15 @@ export const projects = [
     screenshots: [todoImg],
   },
   {
-    id: "blog-app",
-    title: "Blog App (Next.js)",
-    description: "A dynamic blog platform built with Next.js featuring SSR, React Query, and Tailwind CSS for a fast, modern blogging experience.",
-    fullDescription: "A high-performance blog platform built for the Oronium hiring challenge. Implements server-side rendering for optimal SEO, React Query for efficient data fetching, and a modern design with Tailwind CSS. Features include markdown support, code syntax highlighting, comment system, and admin dashboard.",
-    icon: FileText,
-    tags: ["Next.js", "SSR", "Tailwind CSS"],
-    features: ["Server-side rendering", "Markdown support", "Code highlighting", "Comment system", "Admin dashboard"],
-    technologies: ["Next.js", "React Query", "Tailwind CSS", "MDX"],
-    screenshots: [blogImg],
+    id: "women-safety-app",
+    title: "Women Safety App",
+    description: "A safety application designed to help women feel secure with features like emergency SOS, location tracking, and trusted contact alerts.",
+    fullDescription: "A comprehensive safety application built to provide security and peace of mind. The app includes one-tap emergency SOS, real-time location sharing with trusted contacts, safe route suggestions, and community safety reporting. Features background location tracking, emergency contact notification system, and integration with local emergency services.",
+    icon: ShieldCheck,
+    tags: ["Mobile", "Safety", "Location Services"],
+    features: ["Emergency SOS button", "Location tracking", "Trusted contacts", "Safe routes", "Community alerts"],
+    technologies: ["React Native", "GPS Services", "Push Notifications", "Firebase"],
+    screenshots: [todoImg],
   },
 ];
 

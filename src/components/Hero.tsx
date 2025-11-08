@@ -29,8 +29,8 @@ const Hero = () => {
                 Computer Science Student
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight animate-fade-in-up opacity-0" style={{ animationDelay: '0.4s' }}>
-              Hi, I'm <span className="bg-gradient-primary bg-clip-text text-transparent animate-glow-pulse">DeviManoj</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl text-foreground leading-tight animate-fade-in-up opacity-0" style={{ animationDelay: '0.4s' }}>
+              Hi, I'm <span className="bg-gradient-primary bg-clip-text text-transparent animate-glow-pulse">Devi Manoj</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl animate-fade-in-up opacity-0 leading-relaxed" style={{ animationDelay: '0.6s' }}>
               B.Tech CSE student at SJCET Palai, passionate about creating meaningful web applications 

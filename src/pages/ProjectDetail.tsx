@@ -102,10 +102,27 @@ const ProjectDetail = () => {
                     Live Demo (Coming Soon)
                   </Button>
                 )}
-                <Button variant="outline" className="border-primary/30 hover:border-primary hover:bg-accent transition-all duration-300 hover:scale-110">
-                  <Github className="mr-2 h-4 w-4" />
-                  View Code
-                </Button>
+                {project.githubUrl ? (
+                  <Button 
+                    variant="outline" 
+                    className="border-primary/30 hover:border-primary hover:bg-accent transition-all duration-300 hover:scale-110"
+                    asChild
+                  >
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Github className="mr-2 h-4 w-4" />
+                      View Code
+                    </a>
+                  </Button>
+                ) : (
+                  <Button 
+                    variant="outline" 
+                    className="border-primary/30 hover:border-primary hover:bg-accent transition-all duration-300 hover:scale-110" 
+                    disabled
+                  >
+                    <Github className="mr-2 h-4 w-4" />
+                    View Code
+                  </Button>
+                )}
               </div>
             </div>
           </div>
