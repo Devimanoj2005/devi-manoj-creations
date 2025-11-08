@@ -37,9 +37,11 @@ const Hero = () => {
               and exploring new technologies. Building projects that make a difference.
             </p>
             <div className="flex gap-4 justify-center md:justify-start pt-4 animate-fade-in-up opacity-0" style={{ animationDelay: '0.8s' }}>
-              <Button size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300 hover:scale-105">
-                <Mail className="mr-2 h-5 w-5" />
-                Get in Touch
+              <Button size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300 hover:scale-105" asChild>
+                <a href="mailto:2005devimanoj@gmail.com">
+                  <Mail className="mr-2 h-5 w-5" />
+                  Get in Touch
+                </a>
               </Button>
               <Button 
                 variant="outline" 
@@ -54,10 +56,10 @@ const Hero = () => {
               <a href="https://github.com/Devimanoj2005" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 transform">
                 <Github className="h-6 w-6" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 transform">
+              <a href="https://www.linkedin.com/in/devi-manoj-a8a909326" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 transform">
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 transform">
+              <a href="mailto:2005devimanoj@gmail.com" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 transform">
                 <Mail className="h-6 w-6" />
               </a>
             </div>
