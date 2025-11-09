@@ -78,33 +78,31 @@ const Projects = () => {
   const navigate = useNavigate();
 
   return (
-    <section id="projects" className="py-20 px-4 bg-gradient-subtle">
+    <section id="projects" className="py-20 px-4 bg-background">
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-12 animate-fade-in">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-primary mx-auto mb-4 animate-scale-in"></div>
+          <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mb-4"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             A collection of projects showcasing my skills in web development, accessibility, and user-centered design.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {projects.map((project, index) => {
             const Icon = project.icon;
             return (
               <Card 
                 key={index} 
-                className="group relative overflow-hidden hover:shadow-elegant transition-all duration-300 cursor-pointer animate-fade-in border-border/50 hover:border-primary/40 bg-card/95 backdrop-blur-sm"
+                className="group relative overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer animate-fade-in border-border/50 hover:border-primary/30 hover:-translate-y-1"
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => navigate(`/project/${project.id}`)}
               >
-                <div className="absolute -inset-1 bg-gradient-primary opacity-0 group-hover:opacity-10 blur-xl transition-all duration-300"></div>
-                
-                <CardHeader className="relative z-10 pb-3">
+                <CardHeader className="pb-3">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300 flex-shrink-0">
+                    <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-300 flex-shrink-0">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -117,22 +115,24 @@ const Projects = () => {
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="relative z-10 pt-0">
+                
+                <CardContent className="pt-0">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, tagIndex) => (
                       <Badge 
                         key={tagIndex} 
                         variant="secondary" 
-                        className="text-xs px-2.5 py-0.5 bg-secondary/80"
+                        className="text-xs px-2.5 py-0.5"
                       >
                         {tag}
                       </Badge>
                     ))}
                   </div>
+                  
                   <Button 
                     variant="outline" 
                     size="sm" 
-                    className="w-full group/btn border-border/60 hover:border-primary/60 hover:bg-primary/5"
+                    className="w-full group/btn border-border hover:border-primary hover:bg-primary/5"
                   >
                     <span className="text-sm">View Details</span>
                     <ArrowRight className="ml-2 h-3.5 w-3.5 group-hover/btn:translate-x-1 transition-transform duration-300" />
