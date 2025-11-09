@@ -1,13 +1,13 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Heart, MessageCircle, DollarSign, Book, CheckSquare, ShieldCheck, ArrowRight } from "lucide-react";
+import { Heart, MessageCircle, DollarSign, Book, ShieldCheck, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import relationshipImg from "@/assets/projects/relationship-app-1.jpg";
 import counselingImg from "@/assets/projects/counseling-app-1.jpg";
 import expenseImg from "@/assets/projects/expense-tracker-1.jpg";
 import dyslexiaImg from "@/assets/projects/dyslexia-website-1.jpg";
-import todoImg from "@/assets/projects/todo-app-1.jpg";
+import womenSafetyImg from "@/assets/projects/women-safety-app-1.jpg";
 
 export const projects = [
   {
@@ -60,17 +60,6 @@ export const projects = [
     githubUrl: "https://github.com/Devimanoj2005/sereniSphere",
   },
   {
-    id: "todo-app",
-    title: "ToDo App (React)",
-    description: "A responsive productivity app to manage daily tasks using React, with features like task filtering and local storage.",
-    fullDescription: "A clean and efficient task management application built with React. Features include task creation with due dates, priority levels, category organization, filtering options, and persistent storage. The app uses modern React hooks and follows best practices for state management.",
-    icon: CheckSquare,
-    tags: ["React", "Productivity", "Local Storage"],
-    features: ["Task management", "Priority levels", "Category filters", "Due dates", "Persistent storage"],
-    technologies: ["React", "React Hooks", "LocalStorage", "Tailwind CSS"],
-    screenshots: [todoImg],
-  },
-  {
     id: "women-safety-app",
     title: "Women Safety App",
     description: "A safety application designed to help women feel secure with features like emergency SOS, location tracking, and trusted contact alerts.",
@@ -79,7 +68,7 @@ export const projects = [
     tags: ["Mobile", "Safety", "Location Services"],
     features: ["Emergency SOS button", "Location tracking", "Trusted contacts", "Safe routes", "Community alerts"],
     technologies: ["React Native", "GPS Services", "Push Notifications", "Firebase"],
-    screenshots: [todoImg],
+    screenshots: [womenSafetyImg],
   },
 ];
 
@@ -99,50 +88,52 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {projects.map((project, index) => {
             const Icon = project.icon;
             return (
               <Card 
                 key={index} 
-                className="group relative overflow-hidden hover:shadow-hover transition-all duration-500 cursor-pointer animate-fade-in border-border/60 hover:border-primary/60 hover:-translate-y-3 bg-card/80 backdrop-blur-sm"
+                className="group relative overflow-hidden hover:shadow-elegant transition-all duration-300 cursor-pointer animate-fade-in border-border/50 hover:border-primary/40 bg-card/95 backdrop-blur-sm"
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => navigate(`/project/${project.id}`)}
               >
-                {/* Animated gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-8 transition-opacity duration-500"></div>
-                <div className="absolute -inset-1 bg-gradient-primary opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
+                <div className="absolute -inset-1 bg-gradient-primary opacity-0 group-hover:opacity-10 blur-xl transition-all duration-300"></div>
                 
-                <CardHeader className="relative z-10">
-                  <div className="mb-4 p-4 bg-gradient-to-br from-accent to-accent/50 rounded-xl w-fit group-hover:from-primary group-hover:to-primary-glow transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 transform shadow-soft">
-                    <Icon className="h-7 w-7 text-primary group-hover:text-white transition-colors duration-500" />
+                <CardHeader className="relative z-10 pb-3">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300 flex-shrink-0">
+                      <Icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <CardTitle className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
+                        {project.title}
+                      </CardTitle>
+                      <CardDescription className="line-clamp-2 text-sm">
+                        {project.description}
+                      </CardDescription>
+                    </div>
                   </div>
-                  <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300 mb-2">
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription className="line-clamp-3 text-base">
-                    {project.description}
-                  </CardDescription>
                 </CardHeader>
-                <CardContent className="relative z-10">
-                  <div className="flex flex-wrap gap-2 mb-6">
+                <CardContent className="relative z-10 pt-0">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, tagIndex) => (
                       <Badge 
                         key={tagIndex} 
                         variant="secondary" 
-                        className="text-xs font-medium px-3 py-1 bg-gradient-to-r from-secondary/20 to-secondary/10 border-secondary/30 hover:from-secondary/30 hover:to-secondary/20 transition-all duration-300"
+                        className="text-xs px-2.5 py-0.5 bg-secondary/80"
                       >
                         {tag}
                       </Badge>
                     ))}
                   </div>
                   <Button 
-                    variant="ghost" 
+                    variant="outline" 
                     size="sm" 
-                    className="w-full group/btn hover:bg-gradient-to-r hover:from-accent hover:to-accent/60 font-medium"
+                    className="w-full group/btn border-border/60 hover:border-primary/60 hover:bg-primary/5"
                   >
-                    <span>View Details</span>
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
+                    <span className="text-sm">View Details</span>
+                    <ArrowRight className="ml-2 h-3.5 w-3.5 group-hover/btn:translate-x-1 transition-transform duration-300" />
                   </Button>
                 </CardContent>
               </Card>
