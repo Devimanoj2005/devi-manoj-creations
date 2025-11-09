@@ -30,7 +30,13 @@ const Hero = () => {
               </span>
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl text-foreground leading-tight animate-fade-in-up opacity-0" style={{ animationDelay: '0.4s' }}>
-              Hi, I'm <span className="bg-gradient-primary bg-clip-text text-transparent animate-glow-pulse">Devi Manoj</span>
+              Hi, I'm{" "}
+              <span className="relative inline-block">
+                <span className="absolute inset-0 bg-gradient-to-r from-primary via-primary-glow to-primary bg-[length:200%_100%] animate-gradient-shift blur-xl opacity-60"></span>
+                <span className="relative bg-gradient-to-r from-primary via-primary-glow to-primary bg-[length:200%_100%] bg-clip-text text-transparent animate-gradient-shift font-bold animate-text-glow transition-all duration-300 hover:scale-110 inline-block cursor-default">
+                  Devi Manoj
+                </span>
+              </span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl animate-fade-in-up opacity-0 leading-relaxed" style={{ animationDelay: '0.6s' }}>
               B.Tech CSE student at SJCET Palai, passionate about creating meaningful web applications 
