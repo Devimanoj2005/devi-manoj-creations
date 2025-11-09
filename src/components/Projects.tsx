@@ -33,6 +33,7 @@ export const projects = [
     features: ["Anonymous sessions", "Video counseling", "Secure messaging", "Counselor verification", "Resource library"],
     technologies: ["React", "WebRTC", "End-to-End Encryption", "Node.js"],
     screenshots: [counselingImg],
+    demoUrl: "https://anonymousguide.vercel.app/",
   },
   {
     id: "expense-tracker",
@@ -69,6 +70,7 @@ export const projects = [
     features: ["Emergency SOS button", "Location tracking", "Trusted contacts", "Safe routes", "Community alerts"],
     technologies: ["React Native", "GPS Services", "Push Notifications", "Firebase"],
     screenshots: [womenSafetyImg],
+    demoUrl: "https://vigilant-path-guard-elar-p9rx30smk-devimanoj2005s-projects.vercel.app/",
   },
 ];
 
