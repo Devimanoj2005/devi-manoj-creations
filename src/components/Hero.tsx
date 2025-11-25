@@ -43,7 +43,7 @@ const Hero = () => {
             </p>
             
             <div className="flex gap-4 justify-center md:justify-start pt-4 animate-fade-in-up opacity-0" style={{ animationDelay: '0.8s' }}>
-              <Button size="lg" className="bg-gradient-primary hover:shadow-lg transition-all duration-300 font-medium" asChild>
+              <Button size="lg" className="bg-gradient-primary hover:shadow-lg transition-all duration-300 font-medium btn-magnetic btn-liquid btn-glow" asChild>
                 <a href="mailto:2005devimanoj@gmail.com">
                   <Mail className="mr-2 h-5 w-5" />
                   Get in Touch
@@ -52,7 +52,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-border hover:border-primary hover:bg-accent transition-all duration-300 font-medium"
+                className="border-border hover:border-primary hover:bg-accent transition-all duration-300 font-medium btn-magnetic"
                 onClick={scrollToProjects}
               >
                 View Projects

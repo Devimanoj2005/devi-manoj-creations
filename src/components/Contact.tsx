@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Send, MapPin, Github, Linkedin } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -13,22 +14,36 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Create mailto link with form data
-    const subject = `Portfolio Contact from ${formData.name}`;
-    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
-    window.location.href = `mailto:2005devimanoj@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-    
-    toast({
-      title: "Opening email client...",
-      description: "Your default email client will open with the message.",
-    });
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
 
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
+      if (error) throw error;
+
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon!",
+      });
+
+      // Reset form
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again or email me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -164,11 +179,12 @@ const Contact = () => {
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-primary hover:shadow-lg transition-all duration-300 hover:scale-105"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-primary hover:shadow-lg transition-all duration-300 hover:scale-105 btn-magnetic btn-liquid btn-glow"
                 size="lg"
               >
                 <Send className="mr-2 h-4 w-4" />
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Card>
