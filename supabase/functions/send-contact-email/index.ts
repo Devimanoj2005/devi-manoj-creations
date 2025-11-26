@@ -34,7 +34,8 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         from: "Portfolio Contact <onboarding@resend.dev>",
-        to: ["2005devimanoj@gmail.com"],
+        // Resend free tier: can only send to your own account email until a domain is verified
+        to: ["devimanojmanoj@gmail.com"],
         reply_to: email,
         subject: `New Contact Form Submission from ${name}`,
         html: `
