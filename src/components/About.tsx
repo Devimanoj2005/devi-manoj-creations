@@ -1,9 +1,12 @@
 import { GraduationCap, MapPin, Calendar } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const About = () => {
+  const sectionRef = useScrollReveal();
+
   return (
-    <section id="about" className="py-20 px-4 bg-background">
+    <section id="about" ref={sectionRef} className="py-20 px-4 bg-background scroll-reveal">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">

@@ -447,4 +447,16 @@ All colors MUST be HSL.
       cursor: auto !important;
     }
   }
+
+  /* Scroll Reveal Animations */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-reveal.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

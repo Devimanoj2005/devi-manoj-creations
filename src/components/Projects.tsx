@@ -8,6 +8,7 @@ import counselingImg from "@/assets/projects/counseling-app-1.jpg";
 import expenseImg from "@/assets/projects/expense-tracker-1.jpg";
 import dyslexiaImg from "@/assets/projects/dyslexia-website-1.jpg";
 import womenSafetyImg from "@/assets/projects/women-safety-app-1.jpg";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const projects = [
   {
@@ -76,9 +77,10 @@ export const projects = [
 
 const Projects = () => {
   const navigate = useNavigate();
+  const sectionRef = useScrollReveal();
 
   return (
-    <section id="projects" className="py-20 px-4 bg-background">
+    <section id="projects" ref={sectionRef} className="py-20 px-4 bg-background scroll-reveal">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
