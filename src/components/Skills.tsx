@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code2, Globe, Wrench, Lightbulb } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const skillCategories = [
   {
@@ -26,8 +27,10 @@ const skillCategories = [
 ];
 
 const Skills = () => {
+  const sectionRef = useScrollReveal();
+
   return (
-    <section id="skills" className="py-20 px-4 bg-gradient-subtle">
+    <section id="skills" ref={sectionRef} className="py-20 px-4 bg-gradient-subtle scroll-reveal">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">

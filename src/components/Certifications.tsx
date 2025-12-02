@@ -5,6 +5,7 @@ import ImageLightbox from "@/components/ImageLightbox";
 import astraCert from "@/assets/certificates/asthra-certificate.png";
 import yipCert from "@/assets/certificates/yip-certificate.png";
 import gdgCert from "@/assets/certificates/gdg-certificate.jpg";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const certifications = [
   {
@@ -64,6 +65,7 @@ const certificateImages = [
 const Certifications = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
+  const sectionRef = useScrollReveal();
 
   const handleImageClick = (index: number) => {
     setSelectedImage(index);
@@ -71,7 +73,7 @@ const Certifications = () => {
   };
 
   return (
-    <section id="certifications" className="py-20 px-4 bg-muted/30">
+    <section id="certifications" ref={sectionRef} className="py-20 px-4 bg-muted/30 scroll-reveal">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">

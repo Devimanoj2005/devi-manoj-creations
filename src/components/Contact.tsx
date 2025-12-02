@@ -6,9 +6,11 @@ import { Mail, Send, MapPin, Github, Linkedin } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Contact = () => {
   const { toast } = useToast();
+  const sectionRef = useScrollReveal();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,7 +53,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-gradient-subtle">
+    <section id="contact" ref={sectionRef} className="py-20 px-4 bg-gradient-subtle scroll-reveal">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
