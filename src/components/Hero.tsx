@@ -21,21 +21,20 @@ const Hero = () => {
               </span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in-up opacity-0 flex flex-wrap items-center justify-center gap-3 sm:gap-4" style={{ animationDelay: '0.4s' }}>
-              <span className="text-foreground">Hi, I'm</span>
-              <span className="relative inline-flex items-center gap-2 sm:gap-3">
-                <div className="relative group/photo">
-                  <img 
-                    src={profilePhoto} 
-                    alt="Devi Manoj"
-                    className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full object-cover border-2 border-foreground/20 shadow-lg transition-all duration-500 ease-out group-hover/photo:scale-110 group-hover/photo:rotate-6 group-hover/photo:border-foreground/40 group-hover/photo:shadow-xl"
-                  />
-                </div>
-                <span className="text-foreground font-black">
-                  Devi Manoj
-                </span>
-              </span>
-            </h1>
+            <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 animate-fade-in-up opacity-0" style={{ animationDelay: '0.4s' }}>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground">
+                Hi, I'm<br />
+                <span className="font-black">Devi Manoj</span>
+              </h1>
+              
+              <div className="relative group/photo flex-shrink-0">
+                <img 
+                  src={profilePhoto} 
+                  alt="Devi Manoj"
+                  className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full object-cover border-2 border-foreground/20 shadow-lg transition-all duration-500 ease-out group-hover/photo:scale-110 group-hover/photo:rotate-6 group-hover/photo:border-foreground/40 group-hover/photo:shadow-xl"
+                />
+              </div>
+            </div>
             
             <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto animate-fade-in-up opacity-0 leading-relaxed font-light" style={{ animationDelay: '0.6s' }}>
               B.Tech CSE student at SJCET Palai, passionate about creating meaningful web applications 
