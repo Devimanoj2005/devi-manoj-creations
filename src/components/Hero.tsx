@@ -27,7 +27,7 @@ const Hero = () => {
                 <span className="font-black">Devi Manoj</span>
               </h1>
               
-              <div className="relative group/photo flex-shrink-0">
+              <div className="relative group/photo flex-shrink-0 animate-float">
                 <img 
                   src={profilePhoto} 
                   alt="Devi Manoj"
