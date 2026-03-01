@@ -8,6 +8,7 @@ import gdgCert from "@/assets/certificates/gdg-certificate.jpg";
 import palsCert from "@/assets/certificates/pals-certificate.jpeg";
 import yipNewCert from "@/assets/certificates/yip-certificate-new.png";
 import genesisCert from "@/assets/certificates/genesis-certificate.png";
+import ieeeCert from "@/assets/certificates/ieee-certificate.png";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const certifications = [
@@ -83,6 +84,13 @@ const certificateImages = [
     image: genesisCert,
     color: "text-green-600",
     bgGradient: "from-green-500/20 to-lime-500/20"
+  },
+  {
+    title: "Informatyka 5.0 – AI in the Browser",
+    description: "Certificate of Participation in 'AI in the Browser' organized by IEEE Computer Society Kerala Chapter at Kochi Hub as part of Informatyka 5.0 (June 21, 2025)",
+    image: ieeeCert,
+    color: "text-purple-700",
+    bgGradient: "from-purple-600/20 to-pink-500/20"
   }
 ];
 
