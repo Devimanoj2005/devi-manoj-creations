@@ -5,6 +5,9 @@ import ImageLightbox from "@/components/ImageLightbox";
 import astraCert from "@/assets/certificates/asthra-certificate.png";
 import yipCert from "@/assets/certificates/yip-certificate.png";
 import gdgCert from "@/assets/certificates/gdg-certificate.jpg";
+import palsCert from "@/assets/certificates/pals-certificate.jpeg";
+import yipNewCert from "@/assets/certificates/yip-certificate-new.png";
+import genesisCert from "@/assets/certificates/genesis-certificate.png";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const certifications = [
@@ -59,6 +62,27 @@ const certificateImages = [
     image: gdgCert,
     color: "text-yellow-500",
     bgGradient: "from-yellow-500/20 to-amber-500/20"
+  },
+  {
+    title: "Think Create Engineer – PALS, IIT Madras",
+    description: "Certificate of Achievement for completing the 'Think Create Engineer' residential program conducted by PALS at IIT Madras Campus (Dec 4-6, 2025)",
+    image: palsCert,
+    color: "text-blue-600",
+    bgGradient: "from-blue-600/20 to-indigo-500/20"
+  },
+  {
+    title: "Young Innovators Programme 8.0 – K-DISC",
+    description: "Certificate of Recognition for completing all requirements and submitting an idea in the Young Innovators Programme (YIP) 8.0 organized by K-DISC, Government of Kerala (Nov 13, 2025)",
+    image: yipNewCert,
+    color: "text-orange-500",
+    bgGradient: "from-orange-500/20 to-red-500/20"
+  },
+  {
+    title: "GENESIS 2.0 – National Level Hackathon",
+    description: "Certificate of Participation in GENESIS 2.0, a national-level hackathon conducted at Providence College of Engineering (Jan 31 – Feb 1, 2026)",
+    image: genesisCert,
+    color: "text-green-600",
+    bgGradient: "from-green-500/20 to-lime-500/20"
   }
 ];
 
