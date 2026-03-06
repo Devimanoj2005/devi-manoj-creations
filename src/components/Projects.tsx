@@ -21,8 +21,8 @@ export const projects = [
     features: ["Daily conversation prompts", "Shared calendar", "Private messaging", "Activity suggestions", "Milestone tracking"],
     technologies: ["React Native", "Firebase", "Push Notifications", "Redux"],
     screenshots: [relationshipImg],
-    demoUrl: "https://vercel.com/devimanoj2005s-projects/heartbeat-yryl",
-    githubUrl: "https://github.com/Devimanoj2005/Bloom",
+    demoUrl: "https://love-link-delta.vercel.app",
+    githubUrl: "https://github.com/Devimanoj2005/Love_link",
   },
   {
     id: "counseling-platform",
