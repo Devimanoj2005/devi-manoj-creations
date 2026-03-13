@@ -2,6 +2,7 @@ import { Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import shebuildsPhoto from "@/assets/certificates/shebuilds-hackathon.jpeg";
+import sihPhoto from "@/assets/certificates/sih-certificate.png";
 
 const achievements = [
   {
@@ -14,6 +15,17 @@ const achievements = [
     color: "text-pink-500",
     accent: "from-pink-500 to-rose-500",
     bgGlow: "bg-pink-500/10",
+  },
+  {
+    title: "🥈 Runner-Up – Smart India Hackathon",
+    event: "Smart India Hackathon (SIH) 2025",
+    team: "Top 3 Finalist",
+    description:
+      "Achieved Runner-Up position in the preliminary level of the Smart India Hackathon (SIH). Demonstrated strong technical skills, innovative thinking, and teamwork by developing a solution aligned with real-world problem statements.",
+    image: sihPhoto,
+    color: "text-amber-500",
+    accent: "from-amber-500 to-yellow-500",
+    bgGlow: "bg-amber-500/10",
   },
 ];
 
