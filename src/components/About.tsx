@@ -30,7 +30,8 @@ const About = () => {
                   <div className="p-2 bg-muted rounded-lg">
                     <MapPin className="h-4 w-4 text-primary" />
                   </div>
-                  <span>Saint Joseph's College of Engineering and Technology (SJCET), Palai</span>
+                  <span>
+</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-muted rounded-lg">
@@ -49,8 +50,7 @@ const About = () => {
           </p>
         </Card>
       </div>
-    </section>
-  );
+    </section>);
 };
 
 export default About;
