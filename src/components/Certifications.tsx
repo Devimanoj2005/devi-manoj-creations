@@ -117,7 +117,7 @@ const Certifications = () => {
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Certifications & <span className="bg-gradient-primary bg-clip-text text-transparent">Achievements</span>
+            Certifications
           </h2>
           <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
         </div>
