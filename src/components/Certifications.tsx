@@ -40,6 +40,13 @@ const certifications = [
     description: "Attended a hackathon hosted by Mar Athanasius College of Engineering, Kothamangalam, where I contributed to designing and developing a project solution within the given theme.",
     color: "text-green-500",
     bgColor: "bg-green-500/10"
+  },
+  {
+    icon: Trophy,
+    title: "She Builds Hackathon – 1st Prize 🥇",
+    description: "Team Delusion proudly clinched 1st Prize at the She Builds Hackathon, a girls-only innovation challenge organized by CSEA, SJCET Palai. Competing among 100+ participants across 30 teams, we showcased innovative solutions and creative ideas.",
+    color: "text-pink-500",
+    bgColor: "bg-pink-500/10"
   }
 ];
 
