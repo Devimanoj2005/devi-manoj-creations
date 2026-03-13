@@ -9,6 +9,7 @@ import palsCert from "@/assets/certificates/pals-certificate.jpeg";
 import yipNewCert from "@/assets/certificates/yip-certificate-new.png";
 import genesisCert from "@/assets/certificates/genesis-certificate.png";
 import ieeeCert from "@/assets/certificates/ieee-certificate.png";
+import shebuildsCert from "@/assets/certificates/shebuilds-hackathon.jpeg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const certifications = [
