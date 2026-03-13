@@ -99,6 +99,13 @@ const certificateImages = [
     image: ieeeCert,
     color: "text-purple-700",
     bgGradient: "from-purple-600/20 to-pink-500/20"
+  },
+  {
+    title: "She Builds Hackathon – 1st Prize",
+    description: "1st Prize Winner at She Builds Hackathon, a girls-only innovation challenge organized by CSEA, SJCET Palai, competing among 100+ participants across 30 teams (Mar 10, 2026)",
+    image: shebuildsCert,
+    color: "text-pink-500",
+    bgGradient: "from-pink-500/20 to-rose-500/20"
   }
 ];
 
