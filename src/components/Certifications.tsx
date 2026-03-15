@@ -13,94 +13,94 @@ import shebuildsCert from "@/assets/certificates/shebuilds-hackathon.jpeg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const certifications = [
-  {
-    icon: Briefcase,
-    title: "Internship – SJCET Pala",
-    description: "Completed a technical internship at St. Joseph's College of Engineering and Technology (SJCET), Pala, where I gained hands-on experience in software development, teamwork, and understanding real-world engineering workflows.",
-    color: "text-blue-500",
-    bgColor: "bg-blue-500/10"
-  },
-  {
-    icon: Trophy,
-    title: "Smart India Hackathon – Runner-Up",
-    description: "Achieved Runner-Up position in the preliminary level of the Smart India Hackathon (SIH). Demonstrated strong technical skills, innovative thinking, and teamwork by developing a solution aligned with real-world problem statements.",
-    color: "text-amber-500",
-    bgColor: "bg-amber-500/10"
-  },
-  {
-    icon: Users,
-    title: "Hackathon – MBTS, Kothamangalam",
-    description: "Participated in a 13-hour hackathon organized by MBTS, Kothamangalam. Collaborated with a team to build a functional prototype within a limited time frame, showcasing problem-solving skills, time management, and creativity under pressure.",
-    color: "text-purple-500",
-    bgColor: "bg-purple-500/10"
-  },
-  {
-    icon: Award,
-    title: "Hackathon – Mar Athanasius College",
-    description: "Attended a hackathon hosted by Mar Athanasius College of Engineering, Kothamangalam, where I contributed to designing and developing a project solution within the given theme.",
-    color: "text-green-500",
-    bgColor: "bg-green-500/10"
-  },
-  {
-    icon: Trophy,
-    title: "She Builds Hackathon – 1st Prize 🥇",
-    description: "Team Delusion proudly clinched 1st Prize at the She Builds Hackathon, a girls-only innovation challenge organized by CSEA, SJCET Palai. Competing among 100+ participants across 30 teams, we showcased innovative solutions and creative ideas.",
-    color: "text-pink-500",
-    bgColor: "bg-pink-500/10"
-  }
-];
+{
+  icon: Briefcase,
+  title: "Internship – SJCET Pala",
+  description: "Completed a technical internship at St. Joseph's College of Engineering and Technology (SJCET), Pala, where I gained hands-on experience in software development, teamwork, and understanding real-world engineering workflows.",
+  color: "text-blue-500",
+  bgColor: "bg-blue-500/10"
+},
+{
+  icon: Trophy,
+  title: "Smart India Hackathon – Runner-Up",
+  description: "Achieved Runner-Up position in the preliminary level of the Smart India Hackathon (SIH). Demonstrated strong technical skills, innovative thinking, and teamwork by developing a solution aligned with real-world problem statements.",
+  color: "text-amber-500",
+  bgColor: "bg-amber-500/10"
+},
+{
+  icon: Users,
+  title: "Hackathon – MBTS, Kothamangalam",
+  description: "Participated in a 13-hour hackathon organized by MBTS, Kothamangalam. Collaborated with a team to build a functional prototype within a limited time frame, showcasing problem-solving skills, time management, and creativity under pressure.",
+  color: "text-purple-500",
+  bgColor: "bg-purple-500/10"
+},
+{
+  icon: Award,
+  title: "Hackathon – Mar Athanasius College",
+  description: "Attended a hackathon hosted by Mar Athanasius College of Engineering, Kothamangalam, where I contributed to designing and developing a project solution within the given theme.",
+  color: "text-green-500",
+  bgColor: "bg-green-500/10"
+},
+{
+  icon: Trophy,
+  title: "She Builds Hackathon – 1st Prize 🥇",
+  description: "Team Delusion proudly clinched 1st Prize at the She Builds Hackathon, a girls-only innovation challenge organized by CSEA, SJCET Palai. Competing among 100+ participants across 30 teams, we showcased innovative solutions and creative ideas.",
+  color: "text-pink-500",
+  bgColor: "bg-pink-500/10"
+}];
+
 
 const certificateImages = [
-  {
-    title: "ASTHRA 10.0 - Hardwire Hacking Workshop",
-    description: "Certificate of Participation for completing a Hardwire Hacking Workshop at ASTHRA 10.0, National Level Annual Tech Fest at SJCET Palai (Sept 19-20, 2025)",
-    image: astraCert,
-    color: "text-cyan-500",
-    bgGradient: "from-cyan-500/20 to-blue-500/20"
-  },
-  {
-    title: "Young Innovators Program 8.0",
-    description: "Certificate of Appreciation for completing Voice of Stakeholder (VOS) Training as part of the Young Innovators Program 8.0 conducted by K-DISC (Nov 12, 2025)",
-    image: yipCert,
-    color: "text-red-500",
-    bgGradient: "from-red-500/20 to-orange-500/20"
-  },
-  {
-    title: "Google Developer Groups - Cloud AI Session",
-    description: "Certificate of Participation for attending 'Hello to Cloud AI' session exploring Google Cloud Platform and Gemini AI at Mar Athanasius College (Oct 27, 2025)",
-    image: gdgCert,
-    color: "text-yellow-500",
-    bgGradient: "from-yellow-500/20 to-amber-500/20"
-  },
-  {
-    title: "Think Create Engineer – PALS, IIT Madras",
-    description: "Certificate of Achievement for completing the 'Think Create Engineer' residential program conducted by PALS at IIT Madras Campus (Dec 4-6, 2025)",
-    image: palsCert,
-    color: "text-blue-600",
-    bgGradient: "from-blue-600/20 to-indigo-500/20"
-  },
-  {
-    title: "Young Innovators Programme 8.0 – K-DISC",
-    description: "Certificate of Recognition for completing all requirements and submitting an idea in the Young Innovators Programme (YIP) 8.0 organized by K-DISC, Government of Kerala (Nov 13, 2025)",
-    image: yipNewCert,
-    color: "text-orange-500",
-    bgGradient: "from-orange-500/20 to-red-500/20"
-  },
-  {
-    title: "GENESIS 2.0 – National Level Hackathon",
-    description: "Certificate of Participation in GENESIS 2.0, a national-level hackathon conducted at Providence College of Engineering (Jan 31 – Feb 1, 2026)",
-    image: genesisCert,
-    color: "text-green-600",
-    bgGradient: "from-green-500/20 to-lime-500/20"
-  },
-  {
-    title: "Informatyka 5.0 – AI in the Browser",
-    description: "Certificate of Participation in 'AI in the Browser' organized by IEEE Computer Society Kerala Chapter at Kochi Hub as part of Informatyka 5.0 (June 21, 2025)",
-    image: ieeeCert,
-    color: "text-purple-700",
-    bgGradient: "from-purple-600/20 to-pink-500/20"
-  },
-];
+{
+  title: "ASTHRA 10.0 - Hardwire Hacking Workshop",
+  description: "Certificate of Participation for completing a Hardwire Hacking Workshop at ASTHRA 10.0, National Level Annual Tech Fest at SJCET Palai (Sept 19-20, 2025)",
+  image: astraCert,
+  color: "text-cyan-500",
+  bgGradient: "from-cyan-500/20 to-blue-500/20"
+},
+{
+  title: "Young Innovators Program 8.0",
+  description: "Certificate of Appreciation for completing Voice of Stakeholder (VOS) Training as part of the Young Innovators Program 8.0 conducted by K-DISC (Nov 12, 2025)",
+  image: yipCert,
+  color: "text-red-500",
+  bgGradient: "from-red-500/20 to-orange-500/20"
+},
+{
+  title: "Google Developer Groups - Cloud AI Session",
+  description: "Certificate of Participation for attending 'Hello to Cloud AI' session exploring Google Cloud Platform and Gemini AI at Mar Athanasius College (Oct 27, 2025)",
+  image: gdgCert,
+  color: "text-yellow-500",
+  bgGradient: "from-yellow-500/20 to-amber-500/20"
+},
+{
+  title: "Think Create Engineer – PALS, IIT Madras",
+  description: "Certificate of Achievement for completing the 'Think Create Engineer' residential program conducted by PALS at IIT Madras Campus (Dec 4-6, 2025)",
+  image: palsCert,
+  color: "text-blue-600",
+  bgGradient: "from-blue-600/20 to-indigo-500/20"
+},
+{
+  title: "Young Innovators Programme 8.0 – K-DISC",
+  description: "Certificate of Recognition for completing all requirements and submitting an idea in the Young Innovators Programme (YIP) 8.0 organized by K-DISC, Government of Kerala (Nov 13, 2025)",
+  image: yipNewCert,
+  color: "text-orange-500",
+  bgGradient: "from-orange-500/20 to-red-500/20"
+},
+{
+  title: "GENESIS 2.0 – National Level Hackathon",
+  description: "Certificate of Participation in GENESIS 2.0, a national-level hackathon conducted at Providence College of Engineering (Jan 31 – Feb 1, 2026)",
+  image: genesisCert,
+  color: "text-green-600",
+  bgGradient: "from-green-500/20 to-lime-500/20"
+},
+{
+  title: "Informatyka 5.0 – AI in the Browser",
+  description: "Certificate of Participation in 'AI in the Browser' organized by IEEE Computer Society Kerala Chapter at Kochi Hub as part of Informatyka 5.0 (June 21, 2025)",
+  image: ieeeCert,
+  color: "text-purple-700",
+  bgGradient: "from-purple-600/20 to-pink-500/20"
+}];
+
 
 const Certifications = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -127,25 +127,25 @@ const Certifications = () => {
           {certifications.map((cert, index) => {
             const Icon = cert.icon;
             return (
-              <Card 
+              <Card
                 key={index}
-                className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50 group btn-magnetic"
-              >
+                className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50 group btn-magnetic">
+                
                 <div className="flex items-start gap-4">
                   <div className={`p-3 ${cert.bgColor} rounded-xl group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className={`h-6 w-6 ${cert.color}`} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
-                      {cert.title}
-                    </h3>
+                    
+
+                    
                     <p className="text-muted-foreground leading-relaxed">
                       {cert.description}
                     </p>
                   </div>
                 </div>
-              </Card>
-            );
+              </Card>);
+
           })}
         </div>
 
@@ -157,18 +157,18 @@ const Certifications = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 animate-fade-in">
-          {certificateImages.map((cert, index) => (
-            <Card
-              key={index}
-              className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-border/50 btn-magnetic cursor-pointer"
-              onClick={() => handleImageClick(index)}
-            >
+          {certificateImages.map((cert, index) =>
+          <Card
+            key={index}
+            className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-border/50 btn-magnetic cursor-pointer"
+            onClick={() => handleImageClick(index)}>
+            
               <div className={`relative h-64 bg-gradient-to-br ${cert.bgGradient} overflow-hidden`}>
                 <img
-                  src={cert.image}
-                  alt={cert.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+                src={cert.image}
+                alt={cert.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-4 w-full">
                     <p className="text-xs text-muted-foreground">Click to view certificate</p>
@@ -184,19 +184,19 @@ const Certifications = () => {
                 </p>
               </div>
             </Card>
-          ))}
+          )}
         </div>
       </div>
 
-      {lightboxOpen && (
-        <ImageLightbox
-          images={certificateImages.map(cert => cert.image)}
-          currentIndex={selectedImage}
-          onClose={() => setLightboxOpen(false)}
-        />
-      )}
-    </section>
-  );
+      {lightboxOpen &&
+      <ImageLightbox
+        images={certificateImages.map((cert) => cert.image)}
+        currentIndex={selectedImage}
+        onClose={() => setLightboxOpen(false)} />
+
+      }
+    </section>);
+
 };
 
 export default Certifications;
