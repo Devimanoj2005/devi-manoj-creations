@@ -139,9 +139,9 @@ const Certifications = () => {
                     
 
                     
-                    <p className="text-muted-foreground leading-relaxed">
-                      {cert.description}
-                    </p>
+                    
+
+                    
                   </div>
                 </div>
               </Card>);
