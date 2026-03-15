@@ -123,31 +123,31 @@ const Certifications = () => {
         </div>
 
         {/* Achievement Cards */}
-        <div className="grid md:grid-cols-2 gap-6 mb-16 animate-slide-in">
-          {certifications.map((cert, index) => {
-            const Icon = cert.icon;
-            return (
-              <Card
-                key={index}
-                className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50 group btn-magnetic">
-                
-                <div className="flex items-start gap-4">
-                  <div className={`p-3 ${cert.bgColor} rounded-xl group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className={`h-6 w-6 ${cert.color}`} />
-                  </div>
-                  <div className="flex-1">
-                    
+        
 
-                    
-                    
 
-                    
-                  </div>
-                </div>
-              </Card>);
 
-          })}
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
 
         {/* Certificate Images Grid */}
         <div className="text-center mb-8">
