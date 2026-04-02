@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import shebuildsPhoto from "@/assets/certificates/shebuilds-hackathon.jpeg";
 import sihPhoto from "@/assets/certificates/sih-certificate.png";
+import iitMadrasPhoto from "@/assets/certificates/iit-madras-workshop.jpeg";
 
 const achievements = [
   {
@@ -26,6 +27,17 @@ const achievements = [
     color: "text-amber-500",
     accent: "from-amber-500 to-yellow-500",
     bgGlow: "bg-amber-500/10",
+  },
+  {
+    title: "🎓 Selected for IIT Madras Workshop",
+    event: "3-Day Workshop at IIT Madras",
+    team: "Selected Participant",
+    description:
+      "Selected to attend a prestigious 3-day workshop at IIT Madras, one of India's premier engineering institutions. This opportunity provided valuable exposure to cutting-edge technologies, expert mentorship, and a collaborative learning environment.",
+    image: iitMadrasPhoto,
+    color: "text-blue-500",
+    accent: "from-blue-500 to-cyan-500",
+    bgGlow: "bg-blue-500/10",
   },
 ];
 
