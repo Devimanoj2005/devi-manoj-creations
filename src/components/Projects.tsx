@@ -82,29 +82,28 @@ const Projects = () => {
   return (
     <section id="projects" ref={sectionRef} className="py-20 px-4 bg-background scroll-reveal">
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-in opacity-0">
             Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mb-4"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="h-1 bg-gradient-primary mx-auto rounded-full mb-4 line-animate"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
             A collection of projects showcasing my skills in web development, accessibility, and user-centered design.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto stagger-children">
           {projects.map((project, index) => {
             const Icon = project.icon;
             return (
               <Card 
                 key={index} 
-                className="group relative overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer animate-fade-in border-border/50 hover:border-primary/30 hover:-translate-y-1"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="group relative overflow-hidden cursor-pointer border-border/50 card-hover-lift border-glow-hover"
                 onClick={() => navigate(`/project/${project.id}`)}
               >
                 <CardHeader className="pb-3">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-300 flex-shrink-0">
+                    <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-300 flex-shrink-0 icon-hover-spin">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -124,7 +123,7 @@ const Projects = () => {
                       <Badge 
                         key={tagIndex} 
                         variant="secondary" 
-                        className="text-xs px-2.5 py-0.5"
+                        className="text-xs px-2.5 py-0.5 badge-pop"
                       >
                         {tag}
                       </Badge>

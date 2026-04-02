@@ -51,29 +51,27 @@ const Achievements = () => {
       className="py-20 px-4 scroll-reveal"
     >
       <div className="container max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-in opacity-0">
             Key{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Achievements
             </span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full" />
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+          <div className="h-1 bg-gradient-primary mx-auto rounded-full line-animate" />
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
             Milestones and victories that define my journey
           </p>
         </div>
 
-        {/* Achievement Cards */}
-        <div className="space-y-10 animate-slide-in">
+        <div className="space-y-10">
           {achievements.map((item, index) => (
             <Card
               key={index}
-              className="overflow-hidden border-border/50 hover:shadow-2xl transition-all duration-500 group"
+              className="overflow-hidden border-border/50 card-hover-lift border-glow-hover group animate-slide-up-stagger opacity-0"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="grid md:grid-cols-2 gap-0">
-                {/* Image Side */}
                 <div className="relative h-72 md:h-auto overflow-hidden">
                   <img
                     src={item.image}
@@ -83,10 +81,9 @@ const Achievements = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent md:bg-gradient-to-r" />
                 </div>
 
-                {/* Content Side */}
                 <div className="p-8 flex flex-col justify-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className={`p-3 ${item.bgGlow} rounded-xl`}>
+                    <div className={`p-3 ${item.bgGlow} rounded-xl icon-hover-spin`}>
                       <Trophy className={`h-7 w-7 ${item.color}`} />
                     </div>
                     <span

@@ -34,7 +34,6 @@ const Contact = () => {
         description: "Thank you for reaching out. I'll get back to you soon!",
       });
 
-      // Reset form
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error('Error sending message:', error);
@@ -55,22 +54,21 @@ const Contact = () => {
   return (
     <section id="contact" ref={sectionRef} className="py-20 px-4 bg-gradient-subtle scroll-reveal">
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-in opacity-0">
             Get In <span className="bg-gradient-primary bg-clip-text text-transparent">Touch</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="h-1 bg-gradient-primary mx-auto mb-4 line-animate"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
             Have a question or want to work together? Feel free to reach out!
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Contact Info */}
-          <div className="space-y-6 animate-slide-in">
-            <Card className="p-6 hover:shadow-lg transition-all duration-300 border-border/50">
+          <div className="space-y-6 stagger-children">
+            <Card className="p-6 border-border/50 card-hover-lift border-glow-hover">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
+                <div className="p-3 bg-primary/10 rounded-lg icon-hover-spin">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
@@ -85,9 +83,9 @@ const Contact = () => {
               </div>
             </Card>
 
-            <Card className="p-6 hover:shadow-lg transition-all duration-300 border-border/50">
+            <Card className="p-6 border-border/50 card-hover-lift border-glow-hover">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
+                <div className="p-3 bg-primary/10 rounded-lg icon-hover-spin">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
@@ -99,9 +97,9 @@ const Contact = () => {
               </div>
             </Card>
 
-            <Card className="p-6 hover:shadow-lg transition-all duration-300 border-border/50">
+            <Card className="p-6 border-border/50 card-hover-lift border-glow-hover">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
+                <div className="p-3 bg-primary/10 rounded-lg icon-hover-spin">
                   <Github className="h-6 w-6 text-primary" />
                 </div>
                 <div className="flex-1">
@@ -111,7 +109,7 @@ const Contact = () => {
                       href="https://github.com/Devimanoj2005"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                      className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 inline-block"
                     >
                       <Github className="h-5 w-5" />
                     </a>
@@ -119,7 +117,7 @@ const Contact = () => {
                       href="https://www.linkedin.com/in/devi-manoj-a8a909326"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                      className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 inline-block"
                     >
                       <Linkedin className="h-5 w-5" />
                     </a>
@@ -129,8 +127,7 @@ const Contact = () => {
             </Card>
           </div>
 
-          {/* Contact Form */}
-          <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 animate-slide-in-right border-border/50">
+          <Card className="p-6 md:p-8 border-border/50 card-hover-lift border-glow-hover animate-slide-in-right opacity-0" style={{ animationDelay: '0.3s' }}>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium">
