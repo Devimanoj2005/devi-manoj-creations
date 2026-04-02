@@ -450,11 +450,72 @@ All colors MUST be HSL.
   .scroll-reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .scroll-reveal.reveal-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Professional card hover lift */
+  .card-hover-lift {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  }
+  .card-hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -12px hsl(0 0% 0% / 0.4);
+  }
+
+  /* Stagger children animation */
+  .stagger-children > * {
+    opacity: 0;
+    animation: slide-up-stagger 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+  .stagger-children > *:nth-child(2) { animation-delay: 0.12s; }
+  .stagger-children > *:nth-child(3) { animation-delay: 0.19s; }
+  .stagger-children > *:nth-child(4) { animation-delay: 0.26s; }
+  .stagger-children > *:nth-child(5) { animation-delay: 0.33s; }
+  .stagger-children > *:nth-child(6) { animation-delay: 0.40s; }
+  .stagger-children > *:nth-child(7) { animation-delay: 0.47s; }
+
+  @keyframes slide-up-stagger {
+    0% { opacity: 0; transform: translateY(40px) scale(0.97); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* Subtle border glow on hover */
+  .border-glow-hover {
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  }
+  .border-glow-hover:hover {
+    border-color: hsl(var(--primary) / 0.3);
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.05);
+  }
+
+  /* Badge pop-in */
+  .badge-pop {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease;
+  }
+  .badge-pop:hover {
+    transform: scale(1.08);
+  }
+
+  /* Icon spin on hover */
+  .icon-hover-spin {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .icon-hover-spin:hover {
+    transform: rotate(8deg) scale(1.1);
+  }
+
+  /* Section divider line animation */
+  .line-animate {
+    width: 0;
+    animation: line-grow-css 0.8s ease-out forwards;
+  }
+  @keyframes line-grow-css {
+    to { width: 5rem; }
   }
 }
