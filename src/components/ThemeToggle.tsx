@@ -16,7 +16,7 @@ const ThemeToggle = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="relative overflow-hidden bg-card/80 backdrop-blur-lg border border-border/50 shadow-soft"
+        className="relative overflow-hidden bg-card/80 backdrop-blur-lg border border-border/50 shadow-soft opacity-0"
       >
         <div className="h-5 w-5" />
       </Button>
