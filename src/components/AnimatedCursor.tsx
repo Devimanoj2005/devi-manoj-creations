@@ -104,6 +104,7 @@ const AnimatedCursor = () => {
 
   return (
     <>
+      <div ref={rippleContainer} />
       <div ref={outerRef} className="cursor-outer-ring" style={{ opacity: 0 }}>
         <div className="cursor-glow" />
       </div>
