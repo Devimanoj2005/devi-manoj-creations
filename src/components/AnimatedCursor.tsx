@@ -8,6 +8,7 @@ const AnimatedCursor = () => {
   const isPointer = useRef(false);
   const isClicking = useRef(false);
   const rafId = useRef<number>();
+  const rippleContainer = useRef<HTMLDivElement>(null);
 
   const animate = useCallback(() => {
     const dx = targetPos.current.x - outerPos.current.x;
@@ -56,6 +57,16 @@ const AnimatedCursor = () => {
       isClicking.current = true;
       inner.classList.add("clicking");
       outer.classList.add("clicking");
+
+      // Create ripple via DOM — no React state
+      if (rippleContainer.current) {
+        const ripple = document.createElement("div");
+        ripple.className = "cursor-ripple";
+        ripple.style.left = `${targetPos.current.x}px`;
+        ripple.style.top = `${targetPos.current.y}px`;
+        rippleContainer.current.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 700);
+      }
     };
 
     const onUp = () => {
@@ -93,6 +104,7 @@ const AnimatedCursor = () => {
 
   return (
     <>
+      <div ref={rippleContainer} />
       <div ref={outerRef} className="cursor-outer-ring" style={{ opacity: 0 }}>
         <div className="cursor-glow" />
       </div>
