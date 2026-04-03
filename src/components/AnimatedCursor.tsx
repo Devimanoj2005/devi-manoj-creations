@@ -57,6 +57,16 @@ const AnimatedCursor = () => {
       isClicking.current = true;
       inner.classList.add("clicking");
       outer.classList.add("clicking");
+
+      // Create ripple via DOM — no React state
+      if (rippleContainer.current) {
+        const ripple = document.createElement("div");
+        ripple.className = "cursor-ripple";
+        ripple.style.left = `${targetPos.current.x}px`;
+        ripple.style.top = `${targetPos.current.y}px`;
+        rippleContainer.current.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 700);
+      }
     };
 
     const onUp = () => {
