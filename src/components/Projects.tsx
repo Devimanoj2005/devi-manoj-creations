@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Heart, MessageCircle, DollarSign, Book, ShieldCheck, ArrowRight } from "lucide-react";
+import { Heart, MessageCircle, DollarSign, Book, ShieldCheck, ArrowRight, Armchair, BrainCircuit } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import relationshipImg from "@/assets/projects/relationship-app-1.jpg";
 import counselingImg from "@/assets/projects/counseling-app-1.jpg";
@@ -46,7 +46,7 @@ export const projects = [
     features: ["Expense categorization", "Budget planning", "Visual analytics", "Receipt scanning", "Export reports"],
     technologies: ["React", "Chart.js", "LocalStorage", "Tailwind CSS"],
     screenshots: [expenseImg],
-    demoUrl: "https://vercel.com/devimanoj2005s-projects/fina-sparkle",
+    demoUrl: "https://fina-sparkle.vercel.app/",
     githubUrl: "https://github.com/Devimanoj2005/fina-sparkle",
   },
   {
@@ -72,6 +72,30 @@ export const projects = [
     technologies: ["React Native", "GPS Services", "Push Notifications", "Firebase"],
     screenshots: [womenSafetyImg],
     demoUrl: "https://vigilant-path-guard-elar-p9rx30smk-devimanoj2005s-projects.vercel.app/",
+  },
+  {
+    id: "classroom-seat-reservation",
+    title: "Classroom Seat Reservation",
+    description: "A web application that allows students to reserve seats in classrooms, streamlining the seating arrangement process.",
+    fullDescription: "A smart classroom seat reservation system that enables students to book their preferred seats in advance. Features include real-time seat availability, interactive seating layout, and automated reservation management for efficient classroom organization.",
+    icon: Armchair,
+    tags: ["Web App", "Education", "Reservation"],
+    features: ["Interactive seat map", "Real-time availability", "User authentication", "Booking management", "Class scheduling"],
+    technologies: ["React", "Vercel", "Tailwind CSS", "Authentication"],
+    screenshots: [],
+    demoUrl: "https://cse-c-seat-reservation.vercel.app/login",
+  },
+  {
+    id: "ai-interviewer",
+    title: "AI Interviewer",
+    description: "An AI-powered mock interview platform that helps users practice and improve their interview skills with intelligent feedback.",
+    fullDescription: "An intelligent interview preparation tool powered by AI that simulates real interview scenarios. Users can practice technical and behavioral interviews, receive instant feedback on their responses, and track their improvement over time.",
+    icon: BrainCircuit,
+    tags: ["AI", "Web App", "Education"],
+    features: ["AI-powered questions", "Real-time feedback", "Multiple interview types", "Performance tracking", "Practice sessions"],
+    technologies: ["React", "AI/ML", "Netlify", "Tailwind CSS"],
+    screenshots: [],
+    demoUrl: "https://practice-pal-35.netlify.app",
   },
 ];
 
