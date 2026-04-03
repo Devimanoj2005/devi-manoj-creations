@@ -8,6 +8,7 @@ const AnimatedCursor = () => {
   const isPointer = useRef(false);
   const isClicking = useRef(false);
   const rafId = useRef<number>();
+  const rippleContainer = useRef<HTMLDivElement>(null);
 
   const animate = useCallback(() => {
     const dx = targetPos.current.x - outerPos.current.x;
