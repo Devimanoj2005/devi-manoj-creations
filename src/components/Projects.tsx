@@ -1,12 +1,10 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Heart, MessageCircle, DollarSign, Book, ShieldCheck, ArrowRight, Armchair, BrainCircuit } from "lucide-react";
+import { Heart, DollarSign, ShieldCheck, ArrowRight, Armchair, BrainCircuit } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import relationshipImg from "@/assets/projects/relationship-app-1.jpg";
-import counselingImg from "@/assets/projects/counseling-app-1.jpg";
 import expenseImg from "@/assets/projects/expense-tracker-1.jpg";
-import dyslexiaImg from "@/assets/projects/dyslexia-website-1.jpg";
 import womenSafetyImg from "@/assets/projects/women-safety-app-1.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
