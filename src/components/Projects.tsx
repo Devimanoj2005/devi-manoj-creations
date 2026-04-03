@@ -1,12 +1,10 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Heart, MessageCircle, DollarSign, Book, ShieldCheck, ArrowRight, Armchair, BrainCircuit } from "lucide-react";
+import { Heart, DollarSign, ShieldCheck, ArrowRight, Armchair, BrainCircuit } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import relationshipImg from "@/assets/projects/relationship-app-1.jpg";
-import counselingImg from "@/assets/projects/counseling-app-1.jpg";
 import expenseImg from "@/assets/projects/expense-tracker-1.jpg";
-import dyslexiaImg from "@/assets/projects/dyslexia-website-1.jpg";
 import womenSafetyImg from "@/assets/projects/women-safety-app-1.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -23,43 +21,6 @@ export const projects = [
     screenshots: [relationshipImg],
     demoUrl: "https://love-link-delta.vercel.app",
     githubUrl: "https://github.com/Devimanoj2005/Love_link",
-  },
-  {
-    id: "counseling-platform",
-    title: "Anonymous Counseling Platform",
-    description: "A secure and private web app enabling users to seek emotional or mental health support anonymously from verified counselors.",
-    fullDescription: "A secure platform that connects individuals with licensed counselors while maintaining complete anonymity. The platform uses end-to-end encryption for all communications and implements a verification system for counselors. Users can book sessions, communicate via text or video, and access mental health resources.",
-    icon: MessageCircle,
-    tags: ["Web App", "Privacy", "Mental Health"],
-    features: ["Anonymous sessions", "Video counseling", "Secure messaging", "Counselor verification", "Resource library"],
-    technologies: ["React", "WebRTC", "End-to-End Encryption", "Node.js"],
-    screenshots: [counselingImg],
-    demoUrl: "https://anonymousguide.vercel.app/",
-  },
-  {
-    id: "expense-tracker",
-    title: "Expense Tracker Application",
-    description: "A web app that allows users to track income and expenses, visualize data with charts, and manage their monthly budgets efficiently.",
-    fullDescription: "A full-featured expense tracking application that helps users manage their finances effectively. Features include category-wise expense tracking, visual charts and graphs, budget planning, receipt uploads, and financial goal setting. The app provides detailed analytics and monthly reports.",
-    icon: DollarSign,
-    tags: ["Web App", "Finance", "Data Visualization"],
-    features: ["Expense categorization", "Budget planning", "Visual analytics", "Receipt scanning", "Export reports"],
-    technologies: ["React", "Chart.js", "LocalStorage", "Tailwind CSS"],
-    screenshots: [expenseImg],
-    demoUrl: "https://fina-sparkle.vercel.app/",
-    githubUrl: "https://github.com/Devimanoj2005/fina-sparkle",
-  },
-  {
-    id: "dyslexia-website",
-    title: "Website for Dyslexia Patients",
-    description: "An accessibility-focused website built to support dyslexic users with text-to-speech, color contrast adjustments, and simple reading layouts.",
-    fullDescription: "An inclusive web platform specifically designed for individuals with dyslexia. It features customizable reading experiences with dyslexia-friendly fonts, adjustable text spacing, color overlays, text-to-speech functionality, and simplified navigation. The website serves as both an information resource and a demonstration of accessibility best practices.",
-    icon: Book,
-    tags: ["Accessibility", "Web", "Inclusive Design"],
-    features: ["Text-to-speech", "Dyslexia-friendly fonts", "Color adjustments", "Simplified layouts", "Reading ruler"],
-    technologies: ["React", "Web Speech API", "ARIA", "CSS Variables"],
-    screenshots: [dyslexiaImg],
-    githubUrl: "https://github.com/Devimanoj2005/sereniSphere",
   },
   {
     id: "women-safety-app",
