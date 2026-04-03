@@ -46,7 +46,7 @@ export const projects = [
     features: ["Expense categorization", "Budget planning", "Visual analytics", "Receipt scanning", "Export reports"],
     technologies: ["React", "Chart.js", "LocalStorage", "Tailwind CSS"],
     screenshots: [expenseImg],
-    demoUrl: "https://vercel.com/devimanoj2005s-projects/fina-sparkle",
+    demoUrl: "https://fina-sparkle.vercel.app/",
     githubUrl: "https://github.com/Devimanoj2005/fina-sparkle",
   },
   {
