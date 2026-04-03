@@ -73,6 +73,30 @@ export const projects = [
     screenshots: [womenSafetyImg],
     demoUrl: "https://vigilant-path-guard-elar-p9rx30smk-devimanoj2005s-projects.vercel.app/",
   },
+  {
+    id: "classroom-seat-reservation",
+    title: "Classroom Seat Reservation",
+    description: "A web application that allows students to reserve seats in classrooms, streamlining the seating arrangement process.",
+    fullDescription: "A smart classroom seat reservation system that enables students to book their preferred seats in advance. Features include real-time seat availability, interactive seating layout, and automated reservation management for efficient classroom organization.",
+    icon: Armchair,
+    tags: ["Web App", "Education", "Reservation"],
+    features: ["Interactive seat map", "Real-time availability", "User authentication", "Booking management", "Class scheduling"],
+    technologies: ["React", "Vercel", "Tailwind CSS", "Authentication"],
+    screenshots: [],
+    demoUrl: "https://cse-c-seat-reservation.vercel.app/login",
+  },
+  {
+    id: "ai-interviewer",
+    title: "AI Interviewer",
+    description: "An AI-powered mock interview platform that helps users practice and improve their interview skills with intelligent feedback.",
+    fullDescription: "An intelligent interview preparation tool powered by AI that simulates real interview scenarios. Users can practice technical and behavioral interviews, receive instant feedback on their responses, and track their improvement over time.",
+    icon: BrainCircuit,
+    tags: ["AI", "Web App", "Education"],
+    features: ["AI-powered questions", "Real-time feedback", "Multiple interview types", "Performance tracking", "Practice sessions"],
+    technologies: ["React", "AI/ML", "Netlify", "Tailwind CSS"],
+    screenshots: [],
+    demoUrl: "https://practice-pal-35.netlify.app",
+  },
 ];
 
 const Projects = () => {
