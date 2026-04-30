@@ -45,6 +45,25 @@ const AnimatedCursor = () => {
       inner.style.opacity = "1";
       outer.style.opacity = "1";
 
+      // Emit trail particles based on velocity (throttled)
+      const now = performance.now();
+      const vx = e.clientX - lastPos.current.x;
+      const vy = e.clientY - lastPos.current.y;
+      const velocity = Math.sqrt(vx * vx + vy * vy);
+      if (velocity > 4 && now - lastTrailTime.current > 25 && rippleContainer.current) {
+        lastTrailTime.current = now;
+        const trail = document.createElement("div");
+        trail.className = "cursor-trail-dot";
+        trail.style.left = `${e.clientX}px`;
+        trail.style.top = `${e.clientY}px`;
+        const size = Math.min(3 + velocity * 0.1, 8);
+        trail.style.width = `${size}px`;
+        trail.style.height = `${size}px`;
+        rippleContainer.current.appendChild(trail);
+        setTimeout(() => trail.remove(), 600);
+      }
+      lastPos.current = { x: e.clientX, y: e.clientY };
+
       const target = e.target as HTMLElement;
       const interactive =
         target.tagName === "BUTTON" ||
