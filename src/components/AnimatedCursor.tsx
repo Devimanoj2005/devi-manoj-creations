@@ -75,13 +75,29 @@ const AnimatedCursor = () => {
       if (interactive && !isPointer.current) {
         isPointer.current = true;
         outer.classList.add("pointer");
+
+        // Sparkle burst on interactive element enter
+        if (rippleContainer.current) {
+          for (let i = 0; i < 6; i++) {
+            const sparkle = document.createElement("div");
+            sparkle.className = "cursor-sparkle";
+            const angle = (Math.PI * 2 * i) / 6;
+            const distance = 25 + Math.random() * 15;
+            sparkle.style.left = `${e.clientX}px`;
+            sparkle.style.top = `${e.clientY}px`;
+            sparkle.style.setProperty("--tx", `${Math.cos(angle) * distance}px`);
+            sparkle.style.setProperty("--ty", `${Math.sin(angle) * distance}px`);
+            rippleContainer.current.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 800);
+          }
+        }
       } else if (!interactive && isPointer.current) {
         isPointer.current = false;
         outer.classList.remove("pointer");
       }
     };
 
-    const onDown = () => {
+    const onDown = (e: MouseEvent) => {
       isClicking.current = true;
       inner.classList.add("clicking");
       outer.classList.add("clicking");
@@ -94,6 +110,20 @@ const AnimatedCursor = () => {
         ripple.style.top = `${targetPos.current.y}px`;
         rippleContainer.current.appendChild(ripple);
         setTimeout(() => ripple.remove(), 700);
+
+        // Star burst on click
+        for (let i = 0; i < 8; i++) {
+          const star = document.createElement("div");
+          star.className = "cursor-star";
+          const angle = (Math.PI * 2 * i) / 8 + Math.random() * 0.3;
+          const distance = 30 + Math.random() * 20;
+          star.style.left = `${targetPos.current.x}px`;
+          star.style.top = `${targetPos.current.y}px`;
+          star.style.setProperty("--tx", `${Math.cos(angle) * distance}px`);
+          star.style.setProperty("--ty", `${Math.sin(angle) * distance}px`);
+          rippleContainer.current.appendChild(star);
+          setTimeout(() => star.remove(), 700);
+        }
       }
     };
 
