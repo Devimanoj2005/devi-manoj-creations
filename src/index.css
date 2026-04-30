@@ -363,6 +363,64 @@ All colors MUST be HSL.
     }
   }
 
+  /* Sparkle burst on interactive hover */
+  .cursor-sparkle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: hsl(var(--cursor-color));
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9997;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 8px hsl(var(--cursor-color) / 0.8);
+    animation: cursor-sparkle-fly 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    mix-blend-mode: difference;
+    will-change: transform, opacity;
+  }
+
+  @keyframes cursor-sparkle-fly {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(0);
+    }
+    40% {
+      opacity: 1;
+      transform: translate(calc(-50% + var(--tx) * 0.6), calc(-50% + var(--ty) * 0.6)) scale(1.3);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0);
+    }
+  }
+
+  /* Star burst on click */
+  .cursor-star {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: hsl(var(--cursor-color));
+    pointer-events: none;
+    z-index: 9997;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px hsl(var(--cursor-color) / 0.9);
+    animation: cursor-star-burst 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    mix-blend-mode: difference;
+    will-change: transform, opacity;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  @keyframes cursor-star-burst {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0.6) rotate(180deg);
+    }
+  }
+
   /* Enhanced Button Animations */
   .btn-magnetic {
     position: relative;
