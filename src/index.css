@@ -463,6 +463,7 @@ All colors MUST be HSL.
     .cursor-particle,
     .cursor-ripple,
     .cursor-trail,
+    .cursor-trail-dot,
     .cursor-glow {
       display: none !important;
     }
