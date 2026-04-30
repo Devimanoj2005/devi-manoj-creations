@@ -9,6 +9,8 @@ const AnimatedCursor = () => {
   const isClicking = useRef(false);
   const rafId = useRef<number>();
   const rippleContainer = useRef<HTMLDivElement>(null);
+  const lastTrailTime = useRef(0);
+  const lastPos = useRef({ x: -100, y: -100 });
 
   const animate = useCallback(() => {
     const dx = targetPos.current.x - outerPos.current.x;
@@ -19,6 +21,13 @@ const AnimatedCursor = () => {
     if (outerRef.current) {
       outerRef.current.style.left = `${outerPos.current.x}px`;
       outerRef.current.style.top = `${outerPos.current.y}px`;
+
+      // Stretch outer ring based on velocity for elegant flowing effect
+      const speed = Math.min(Math.sqrt(dx * dx + dy * dy), 60);
+      const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+      const stretch = 1 + speed * 0.008;
+      const squish = 1 - speed * 0.004;
+      outerRef.current.style.transform = `translate(-50%, -50%) rotate(${angle}deg) scale(${stretch}, ${squish})`;
     }
 
     rafId.current = requestAnimationFrame(animate);
@@ -35,6 +44,25 @@ const AnimatedCursor = () => {
       inner.style.top = `${e.clientY}px`;
       inner.style.opacity = "1";
       outer.style.opacity = "1";
+
+      // Emit trail particles based on velocity (throttled)
+      const now = performance.now();
+      const vx = e.clientX - lastPos.current.x;
+      const vy = e.clientY - lastPos.current.y;
+      const velocity = Math.sqrt(vx * vx + vy * vy);
+      if (velocity > 4 && now - lastTrailTime.current > 25 && rippleContainer.current) {
+        lastTrailTime.current = now;
+        const trail = document.createElement("div");
+        trail.className = "cursor-trail-dot";
+        trail.style.left = `${e.clientX}px`;
+        trail.style.top = `${e.clientY}px`;
+        const size = Math.min(3 + velocity * 0.1, 8);
+        trail.style.width = `${size}px`;
+        trail.style.height = `${size}px`;
+        rippleContainer.current.appendChild(trail);
+        setTimeout(() => trail.remove(), 600);
+      }
+      lastPos.current = { x: e.clientX, y: e.clientY };
 
       const target = e.target as HTMLElement;
       const interactive =
