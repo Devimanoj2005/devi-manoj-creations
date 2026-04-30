@@ -522,6 +522,8 @@ All colors MUST be HSL.
     .cursor-ripple,
     .cursor-trail,
     .cursor-trail-dot,
+    .cursor-sparkle,
+    .cursor-star,
     .cursor-glow {
       display: none !important;
     }
