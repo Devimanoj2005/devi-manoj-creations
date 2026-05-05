@@ -11,6 +11,35 @@ const AnimatedCursor = () => {
   const rippleContainer = useRef<HTMLDivElement>(null);
   const lastTrailTime = useRef(0);
   const lastPos = useRef({ x: -100, y: -100 });
+  const audioCtx = useRef<AudioContext | null>(null);
+
+  const playClickSound = useCallback(() => {
+    try {
+      if (!audioCtx.current) {
+        const Ctx =
+          window.AudioContext ||
+          (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+        audioCtx.current = new Ctx();
+      }
+      const ctx = audioCtx.current;
+      if (ctx.state === "suspended") ctx.resume();
+      const now = ctx.currentTime;
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(880, now);
+      osc.frequency.exponentialRampToValueAtTime(440, now + 0.08);
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.exponentialRampToValueAtTime(0.08, now + 0.005);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
+      osc.connect(gain).connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + 0.13);
+    } catch {
+      // no-op
+    }
+  }, []);
 
   const animate = useCallback(() => {
     const dx = targetPos.current.x - outerPos.current.x;
@@ -101,6 +130,16 @@ const AnimatedCursor = () => {
       isClicking.current = true;
       inner.classList.add("clicking");
       outer.classList.add("clicking");
+
+      // Play subtle click sound only on interactive elements
+      const target = e.target as HTMLElement;
+      const interactive =
+        target.tagName === "BUTTON" ||
+        target.tagName === "A" ||
+        target.closest("button") ||
+        target.closest("a") ||
+        window.getComputedStyle(target).cursor === "pointer";
+      if (interactive) playClickSound();
 
       // Create ripple via DOM — no React state
       if (rippleContainer.current) {

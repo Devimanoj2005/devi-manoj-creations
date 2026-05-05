@@ -605,4 +605,89 @@ All colors MUST be HSL.
   @keyframes line-grow-css {
     to { width: 5rem; }
   }
+
+  /* ===== Cinematic Intro Animation ===== */
+  .intro-exit {
+    animation: intro-fade-out 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes intro-fade-out {
+    0% { opacity: 1; transform: scale(1); filter: blur(0px); }
+    100% { opacity: 0; transform: scale(1.08); filter: blur(6px); visibility: hidden; }
+  }
+
+  .intro-streak {
+    position: absolute;
+    top: 50%;
+    left: -30%;
+    width: 160%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0) 80%, transparent 100%);
+    box-shadow: 0 0 40px 8px rgba(255,255,255,0.4);
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: left center;
+    animation: intro-streak-sweep 1.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  }
+
+  @keyframes intro-streak-sweep {
+    0%   { transform: translateY(-50%) scaleX(0); opacity: 0; }
+    20%  { opacity: 1; }
+    60%  { transform: translateY(-50%) scaleX(1); opacity: 1; }
+    100% { transform: translateY(-50%) scaleX(1) translateX(20%); opacity: 0; }
+  }
+
+  .intro-name {
+    opacity: 0;
+    filter: blur(20px);
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 30px rgba(255,255,255,0.4), 0 0 60px rgba(255,255,255,0.2);
+    animation: intro-name-reveal 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards,
+               intro-name-glow 2.4s ease-in-out 1.6s infinite;
+  }
+
+  @keyframes intro-name-reveal {
+    0%   { opacity: 0; filter: blur(20px); letter-spacing: 0.3em; transform: translateY(10px); }
+    100% { opacity: 1; filter: blur(0px); letter-spacing: -0.01em; transform: translateY(0); }
+  }
+
+  @keyframes intro-name-glow {
+    0%, 100% { text-shadow: 0 0 24px rgba(255,255,255,0.35), 0 0 48px rgba(255,255,255,0.15); }
+    50%      { text-shadow: 0 0 40px rgba(255,255,255,0.6),  0 0 80px rgba(255,255,255,0.25); }
+  }
+
+  .intro-greeting {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: intro-greeting-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards;
+  }
+
+  @keyframes intro-greeting-in {
+    0%   { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 0.85; transform: translateY(0); }
+  }
+
+  .intro-sparkle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 8px 2px rgba(255,255,255,0.8);
+    opacity: 0;
+    animation: intro-sparkle-twinkle ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+
+  @keyframes intro-sparkle-twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.4); }
+    50%      { opacity: 1; transform: scale(1.2); }
+  }
+
+  .intro-content-reveal {
+    animation: intro-content-zoom 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes intro-content-zoom {
+    0%   { opacity: 0; transform: scale(1.06); filter: blur(8px); }
+    100% { opacity: 1; transform: scale(1);    filter: blur(0px); }
+  }
 }
+
