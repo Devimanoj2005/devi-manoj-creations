@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
 import AnimatedCursor from "@/components/AnimatedCursor";
+import CursorSpotlight from "@/components/CursorSpotlight";
 import IntroAnimation from "@/components/IntroAnimation";
 
 const queryClient = new QueryClient();
@@ -49,6 +50,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <CursorSpotlight />
       <AnimatedCursor />
       <BrowserRouter>
         <AppRoutes />
