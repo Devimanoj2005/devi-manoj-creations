@@ -4,6 +4,11 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const experiences = [
   {
+    role: "Frontend Intern",
+    organization: "MuLearn",
+    period: "6 months",
+  },
+  {
     role: "Design Lead",
     organization: "CSEA – Computer Science and Engineering Association",
     period: "2025 – 2026",
