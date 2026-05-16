@@ -1,28 +1,64 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code2, Globe, Wrench, Lightbulb } from "lucide-react";
+import {
+  Layers,
+  Palette,
+  Code2,
+  Server,
+  Database,
+  Shield,
+  Cloud,
+  Wrench,
+} from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const skillCategories = [
   {
-    title: "Languages",
+    title: "Frontend Frameworks & Libraries",
+    icon: Layers,
+    skills: ["React", "Next.js", "Angular", "Vue.js"],
+  },
+  {
+    title: "Styling & Design",
+    icon: Palette,
+    skills: ["HTML", "CSS", "Tailwind CSS", "Bootstrap", "Sass / SCSS", "UI/UX Design"],
+  },
+  {
+    title: "Programming Languages",
     icon: Code2,
-    skills: ["C", "Java", "JavaScript", "Python"],
+    skills: ["C", "Java", "JavaScript", "TypeScript", "Python", "PHP", "C#", "Go"],
   },
   {
-    title: "Web Technologies",
-    icon: Globe,
-    skills: ["HTML", "CSS", "React", "Next.js", "Tailwind CSS"],
+    title: "Backend Frameworks",
+    icon: Server,
+    skills: ["Node.js", "Express.js", "Django", "Flask", "Spring Boot", "Laravel"],
   },
   {
-    title: "Tools",
+    title: "Databases",
+    icon: Database,
+    skills: ["MySQL", "PostgreSQL", "SQLite", "MongoDB", "Firebase"],
+  },
+  {
+    title: "Security & Authentication",
+    icon: Shield,
+    skills: [
+      "Password Hashing",
+      "Authentication Systems",
+      "Authorization",
+      "HTTPS",
+      "Secure APIs",
+      "Input Validation",
+    ],
+  },
+  {
+    title: "DevOps & Hosting",
+    icon: Cloud,
+    skills: ["Git", "GitHub", "Vercel", "Netlify", "Render", "AWS"],
+  },
+  {
+    title: "Tools & APIs",
     icon: Wrench,
-    skills: ["Git", "GitHub", "VS Code"],
-  },
-  {
-    title: "Other Areas",
-    icon: Lightbulb,
-    skills: ["UI/UX basics", "API integration", "Project deployment"],
+    skills: ["VS Code", "REST APIs", "GraphQL", "Project Deployment"],
   },
 ];
 
@@ -39,25 +75,27 @@ const Skills = () => {
           <div className="h-1 bg-gradient-primary mx-auto rounded-full line-animate"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto stagger-children">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto stagger-children">
           {skillCategories.map((category, index) => {
             const Icon = category.icon;
             return (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="p-6 border-border/50 card-hover-lift border-glow-hover group"
               >
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-all duration-300 icon-hover-spin">
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-300">{category.title}</h3>
+                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-300">
+                    {category.title}
+                  </h3>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
-                    <Badge 
-                      key={skillIndex} 
+                    <Badge
+                      key={skillIndex}
                       variant="outline"
                       className="border-border hover:border-primary hover:bg-primary/5 transition-all duration-300 font-medium px-3 py-1.5 badge-pop"
                     >
