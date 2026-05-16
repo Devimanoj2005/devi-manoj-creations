@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Heart, DollarSign, ShieldCheck, ArrowRight, Armchair, BrainCircuit } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import relationshipImg from "@/assets/projects/relationship-app-1.jpg";
+import relationshipImg2 from "@/assets/projects/relationship-app-2.jpg";
+import relationshipImg3 from "@/assets/projects/relationship-app-3.jpg";
+import relationshipImg4 from "@/assets/projects/relationship-app-4.jpg";
 import expenseImg from "@/assets/projects/expense-tracker-1.jpg";
 import womenSafetyImg from "@/assets/projects/women-safety-app-1.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -18,7 +21,7 @@ export const projects = [
     tags: ["Mobile", "Communication", "React Native"],
     features: ["Daily conversation prompts", "Shared calendar", "Private messaging", "Activity suggestions", "Milestone tracking"],
     technologies: ["React Native", "Firebase", "Push Notifications", "Redux"],
-    screenshots: [relationshipImg],
+    screenshots: [relationshipImg, relationshipImg2, relationshipImg3, relationshipImg4],
     demoUrl: "https://love-link-delta.vercel.app",
     githubUrl: "https://github.com/Devimanoj2005/Love_link",
   },
