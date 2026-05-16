@@ -60,7 +60,7 @@ const Contact = () => {
           </h2>
           <div className="h-1 bg-gradient-primary mx-auto mb-4 line-animate"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
-            Have a question or want to work together? Feel free to reach out!
+           Let’s create something extraordinary together!
           </p>
         </div>
 
