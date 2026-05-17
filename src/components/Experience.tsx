@@ -7,21 +7,35 @@ const experiences = [
     role: "Frontend Intern",
     organization: "MuLearn",
     period: "6 months",
-  },
-  {
-    role: "Design Lead",
-    organization: "CSEA – Computer Science and Engineering Association",
-    period: "2025 – 2026",
+    points: [
+      "Developed and improved UI components using React.js; built responsive, accessible web applications with cross-functional teams.",
+      "Contributed to frontend architecture decisions, performance optimisation, code reviews, and agile sprint cycles.",
+    ],
   },
   {
     role: "Technical Officer",
-    organization: "IEDC",
-    period: "2026 – 2027",
+    organization: "Innovation and Entrepreneurship Development Cell (IEDC), SJCET Palai",
+    period: "2026 – Present",
+    points: [
+      "Led technical initiatives and workshops; collaborated on tech-based prototypes and proof-of-concept solutions.",
+      "Mentored junior members on technology tools and guided them through project development phases.",
+    ],
+  },
+  {
+    role: "Design Lead",
+    organization: "Computer Science and Engineering Association (CSEA), SJCET Palai",
+    period: "2025 – Present",
+    points: [
+      "Designed posters, banners, and digital content for events using Figma and Canva; maintained consistent visual branding across all platforms.",
+    ],
   },
   {
     role: "Web Team Member",
-    organization: "IEEE",
-    period: "2026 – 2027",
+    organization: "IEEE Student Branch, SJCET Palai",
+    period: "2025 – Present",
+    points: [
+      "Worked on website development, UI improvements, and published event updates and technical articles for the student branch portal.",
+    ],
   },
 ];
 
@@ -62,10 +76,19 @@ const Experience = () => {
                     <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-300 icon-hover-spin">
                       <Briefcase className="h-6 w-6 text-primary" />
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h3 className="text-xl font-bold text-foreground">{item.role}</h3>
                       <p className="text-primary font-semibold text-sm mt-1">{item.organization}</p>
                       <p className="text-muted-foreground text-sm mt-2">{item.period}</p>
+                      {item.points && (
+                        <ul className="mt-3 space-y-2 list-disc list-outside pl-5">
+                          {item.points.map((point, i) => (
+                            <li key={i} className="text-muted-foreground text-sm leading-relaxed">
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
                 </Card>

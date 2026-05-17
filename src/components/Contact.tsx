@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Send, MapPin, Github, Linkedin } from "lucide-react";
+import { Mail, Send, MapPin, Github, Linkedin, Phone } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -78,6 +78,23 @@ const Contact = () => {
                     className="text-muted-foreground hover:text-primary transition-colors duration-300"
                   >
                     2005devimanoj@gmail.com
+                  </a>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-6 border-border/50 card-hover-lift border-glow-hover">
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-primary/10 rounded-lg icon-hover-spin">
+                  <Phone className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1">Phone</h3>
+                  <a
+                    href="tel:+918302922872"
+                    className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                  >
+                    +91 83029 22872
                   </a>
                 </div>
               </div>
