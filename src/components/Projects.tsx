@@ -47,7 +47,7 @@ export const projects = [
     tags: ["Web App", "Education", "Reservation"],
     features: ["Interactive seat map", "Real-time availability", "User authentication", "Booking management", "Class scheduling"],
     technologies: ["React", "Vercel", "Tailwind CSS", "Authentication"],
-    screenshots: [],
+    screenshots: [aiInterviewerImg],
     demoUrl: "https://cse-c-seat-reservation.vercel.app/login",
   },
   {
