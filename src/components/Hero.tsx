@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronDown, FileText } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
 
 const Hero = () => {
@@ -55,6 +55,17 @@ const Hero = () => {
                 onClick={scrollToProjects}
               >
                 View Projects
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-foreground/20 hover:border-foreground hover:bg-foreground hover:text-background rounded-full px-8 font-medium transition-all duration-300"
+                asChild
+              >
+                <a href="/Devi-Manoj-Resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <FileText className="mr-2 h-4 w-4" />
+                  My Resume
+                </a>
               </Button>
             </div>
             
