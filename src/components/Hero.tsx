@@ -17,7 +17,7 @@ const Hero = () => {
           <div className="text-center space-y-8">
             <div className="inline-block animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
               <span className="text-primary-foreground font-medium text-xs tracking-widest uppercase bg-primary px-4 py-1.5 rounded-full">
-                Computer Science Student
+                Full Stack Developer
               </span>
             </div>
             

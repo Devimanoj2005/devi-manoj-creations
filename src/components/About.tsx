@@ -23,7 +23,7 @@ const About = () => {
             <div className="flex-1">
               <h3 className="text-2xl font-bold mb-3 text-foreground">Education</h3>
               <h4 className="text-xl font-semibold text-foreground mb-4">
-                Bachelor of Technology in Computer Science & Engineering
+                B.Tech in Computer Science & Engineering
               </h4>
               <div className="space-y-3 text-muted-foreground">
                 <div className="flex items-center gap-3 animate-slide-in opacity-0" style={{ animationDelay: '0.3s' }}>
@@ -36,16 +36,20 @@ const About = () => {
                   <div className="p-2 bg-muted rounded-lg">
                     <Calendar className="h-4 w-4 text-primary" />
                   </div>
-                  <span>2024 – Present</span>
+                  <span>2024 – 2028</span>
                 </div>
               </div>
+              <p className="text-muted-foreground leading-relaxed mt-4">
+                Pursuing core subjects in algorithms, data structures, software engineering, and computer networks.
+                Actively engaged in technical clubs, hackathons, and innovation cells.
+              </p>
             </div>
           </div>
-          
+
           <p className="text-muted-foreground leading-relaxed text-lg p-6 rounded-lg bg-muted/50 animate-fade-in opacity-0" style={{ animationDelay: '0.5s' }}>
-            Currently pursuing my passion for technology and software development at SJCET Palai. 
-            I'm constantly learning and building projects that combine technical skills with creative problem-solving, 
-            focusing on web technologies and user-centered design.
+            Motivated B.Tech Computer Science student experienced in building projects with React, Next.js, JavaScript,
+            and Tailwind CSS. Creative problem-solver with strong adaptability and teamwork skills, passionate about
+            solving real-world problems through technology. Aspiring software engineer and future entrepreneur.
           </p>
         </Card>
       </div>
