@@ -9,6 +9,7 @@ import relationshipImg3 from "@/assets/projects/relationship-app-3.jpg";
 import relationshipImg4 from "@/assets/projects/relationship-app-4.jpg";
 import expenseImg from "@/assets/projects/expense-tracker-1.jpg";
 import womenSafetyImg from "@/assets/projects/women-safety-app-1.jpg";
+import aiInterviewerImg from "@/assets/projects/ai-interviewer-1.png";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const projects = [
