@@ -10,6 +10,7 @@ import yipNewCert from "@/assets/certificates/yip-certificate-new.png";
 import genesisCert from "@/assets/certificates/genesis-certificate.png";
 import ieeeCert from "@/assets/certificates/ieee-certificate.png";
 import shebuildsCert from "@/assets/certificates/shebuilds-hackathon.jpeg";
+import asc2026Cert from "@/assets/certificates/asc2026-hackathon.png";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const certifications = [
@@ -99,6 +100,13 @@ const certificateImages = [
   image: ieeeCert,
   color: "text-purple-700",
   bgGradient: "from-purple-600/20 to-pink-500/20"
+},
+{
+  title: "AI Autonomous Smart City Hackathon 2026",
+  description: "Certificate of Participation in the AI Autonomous Smart City Hackathon 2026 – Innovation Hacks category, building intelligent AI solutions that empower cities to think, adapt, and operate autonomously.",
+  image: asc2026Cert,
+  color: "text-blue-700",
+  bgGradient: "from-blue-700/20 to-amber-500/20"
 }];
 
 
