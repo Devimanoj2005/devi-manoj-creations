@@ -228,12 +228,14 @@ const ProjectDetail = () => {
                 <p className="text-white/90 mb-4 text-sm">
                   Get in touch to learn more about the development process and implementation details.
                 </p>
-                <a 
-                  href="tel:+919876543210" 
+                <a
+                  href="https://wa.me/918301922872?text=Nice%20project%20i%20want%20to%20learn%20more%20about%20it"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-full"
                 >
                   <Button variant="secondary" className="w-full hover:scale-105 transition-transform duration-300 font-semibold">
-                    📞 Call: +91 98765 43210
+                    📞 WhatsApp: +91 83019 22872
                   </Button>
                 </a>
               </div>
