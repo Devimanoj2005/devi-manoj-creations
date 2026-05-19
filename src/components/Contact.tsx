@@ -91,10 +91,12 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold mb-1">Phone</h3>
                   <a
-                    href="tel:+918302922872"
+                    href="https://wa.me/918301922872?text=Nice%20project%20i%20want%20to%20learn%20more%20about%20it"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors duration-300"
                   >
-                    +91 83029 22872
+                    +91 83019 22872
                   </a>
                 </div>
               </div>
