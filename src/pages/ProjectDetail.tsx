@@ -63,8 +63,8 @@ const ProjectDetail = () => {
 
         <div className="container max-w-6xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row items-start gap-8">
-            <div className="p-6 bg-gradient-primary rounded-2xl shadow-glow animate-glow-pulse hover:scale-110 transition-transform duration-500">
-              <Icon className="h-16 w-16 text-white animate-bounce-slow" />
+            <div className="p-6 bg-gradient-primary rounded-2xl shadow-glow hover:scale-110 transition-transform duration-500">
+              <Icon className="h-16 w-16 text-white" />
             </div>
             <div className="flex-1">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up opacity-0 bg-gradient-primary bg-clip-text text-transparent">
