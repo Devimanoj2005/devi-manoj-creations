@@ -44,8 +44,9 @@ const AnimatedCursor = () => {
   const animate = useCallback(() => {
     const dx = targetPos.current.x - outerPos.current.x;
     const dy = targetPos.current.y - outerPos.current.y;
-    outerPos.current.x += dx * 0.15;
-    outerPos.current.y += dy * 0.15;
+    // Smoother, more elastic follow
+    outerPos.current.x += dx * 0.18;
+    outerPos.current.y += dy * 0.18;
 
     if (outerRef.current) {
       outerRef.current.style.left = `${outerPos.current.x}px`;
@@ -68,7 +69,25 @@ const AnimatedCursor = () => {
     if (!inner || !outer) return;
 
     const onMove = (e: MouseEvent) => {
-      targetPos.current = { x: e.clientX, y: e.clientY };
+      // Magnetic snap toward hovered interactive elements
+      const target = e.target as HTMLElement;
+      const magnet =
+        (target.closest("button, a, [role='button']") as HTMLElement | null) ||
+        (window.getComputedStyle(target).cursor === "pointer" ? target : null);
+
+      let tx = e.clientX;
+      let ty = e.clientY;
+      if (magnet) {
+        const r = magnet.getBoundingClientRect();
+        if (r.width < 320 && r.height < 160) {
+          const cx = r.left + r.width / 2;
+          const cy = r.top + r.height / 2;
+          tx = e.clientX + (cx - e.clientX) * 0.25;
+          ty = e.clientY + (cy - e.clientY) * 0.25;
+        }
+      }
+
+      targetPos.current = { x: tx, y: ty };
       inner.style.left = `${e.clientX}px`;
       inner.style.top = `${e.clientY}px`;
       inner.style.opacity = "1";
@@ -79,21 +98,24 @@ const AnimatedCursor = () => {
       const vx = e.clientX - lastPos.current.x;
       const vy = e.clientY - lastPos.current.y;
       const velocity = Math.sqrt(vx * vx + vy * vy);
-      if (velocity > 4 && now - lastTrailTime.current > 25 && rippleContainer.current) {
+      if (velocity > 3 && now - lastTrailTime.current > 18 && rippleContainer.current) {
         lastTrailTime.current = now;
         const trail = document.createElement("div");
         trail.className = "cursor-trail-dot";
-        trail.style.left = `${e.clientX}px`;
-        trail.style.top = `${e.clientY}px`;
-        const size = Math.min(3 + velocity * 0.1, 8);
+        // Slight perpendicular jitter for a flowing comet feel
+        const perpX = -vy / (velocity || 1);
+        const perpY = vx / (velocity || 1);
+        const jitter = (Math.random() - 0.5) * Math.min(velocity * 0.4, 6);
+        trail.style.left = `${e.clientX + perpX * jitter}px`;
+        trail.style.top = `${e.clientY + perpY * jitter}px`;
+        const size = Math.min(4 + velocity * 0.18, 12);
         trail.style.width = `${size}px`;
         trail.style.height = `${size}px`;
         rippleContainer.current.appendChild(trail);
-        setTimeout(() => trail.remove(), 600);
+        setTimeout(() => trail.remove(), 700);
       }
       lastPos.current = { x: e.clientX, y: e.clientY };
 
-      const target = e.target as HTMLElement;
       const interactive =
         target.tagName === "BUTTON" ||
         target.tagName === "A" ||
