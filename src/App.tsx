@@ -45,13 +45,17 @@ const AppRoutes = () => {
   );
 };
 
+const isTouchDevice =
+  typeof window !== "undefined" &&
+  (window.matchMedia?.("(pointer: coarse)").matches || "ontouchstart" in window);
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <CursorSpotlight />
-      <AnimatedCursor />
+      {!isTouchDevice && <CursorSpotlight />}
+      {!isTouchDevice && <AnimatedCursor />}
       <BrowserRouter>
         <AppRoutes />
       </BrowserRouter>
