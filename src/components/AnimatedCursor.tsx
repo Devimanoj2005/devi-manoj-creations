@@ -116,7 +116,6 @@ const AnimatedCursor = () => {
       }
       lastPos.current = { x: e.clientX, y: e.clientY };
 
-      const target = e.target as HTMLElement;
       const interactive =
         target.tagName === "BUTTON" ||
         target.tagName === "A" ||
