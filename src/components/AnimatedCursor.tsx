@@ -44,8 +44,9 @@ const AnimatedCursor = () => {
   const animate = useCallback(() => {
     const dx = targetPos.current.x - outerPos.current.x;
     const dy = targetPos.current.y - outerPos.current.y;
-    outerPos.current.x += dx * 0.15;
-    outerPos.current.y += dy * 0.15;
+    // Smoother, more elastic follow
+    outerPos.current.x += dx * 0.18;
+    outerPos.current.y += dy * 0.18;
 
     if (outerRef.current) {
       outerRef.current.style.left = `${outerPos.current.x}px`;
