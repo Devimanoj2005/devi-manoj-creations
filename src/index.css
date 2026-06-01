@@ -133,6 +133,32 @@ All colors MUST be HSL.
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @media (max-width: 768px) {
+    html {
+      scroll-behavior: auto;
+    }
+    /* Kill expensive global transitions, blurs, and reveal effects that make mobile scroll janky */
+    *,
+    *::before,
+    *::after {
+      transition: none !important;
+    }
+    .scroll-reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+      transition: none !important;
+    }
+    .stagger-children > * {
+      opacity: 1 !important;
+      animation: none !important;
+    }
+    .intro-content-reveal {
+      animation: none !important;
+    }
   }
   
   /* Smooth theme transitions */
