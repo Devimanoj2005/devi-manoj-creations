@@ -4,6 +4,15 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const experiences = [
   {
+    role: "Software Developer Intern",
+    organization: "Beyond Innovators",
+    period: "3 months",
+    points: [
+      "Contributed to full-stack development using modern frameworks; built and maintained scalable web application features.",
+      "Collaborated with cross-functional teams on product requirements, code reviews, and iterative delivery cycles.",
+    ],
+  },
+  {
     role: "Frontend Intern",
     organization: "MuLearn",
     period: "6 months",
