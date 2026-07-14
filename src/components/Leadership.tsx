@@ -25,7 +25,6 @@ const Leadership = () => {
       id="leadership"
       className="relative py-20 px-4 overflow-hidden"
     >
-      {/* Floating gradient background */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute top-1/3 -right-32 w-[32rem] h-[32rem] rounded-full bg-primary/5 blur-3xl" />
@@ -49,22 +48,16 @@ const Leadership = () => {
           {leadershipData.map((item, index) => (
             <div
               key={index}
-              className="group relative rounded-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-[1.02]"
+              className="group relative rounded-lg"
             >
-              {/* Animated gradient border */}
-              <div className="pointer-events-none absolute -inset-px rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 [background:conic-gradient(from_var(--angle,0deg),hsl(var(--primary))_0%,transparent_25%,hsl(var(--primary-glow))_50%,transparent_75%,hsl(var(--primary))_100%)] animate-[spin_6s_linear_infinite]" />
+              <div className="pointer-events-none absolute -inset-px rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 [background:linear-gradient(135deg,hsl(var(--primary))_0%,hsl(var(--primary-glow))_50%,hsl(var(--primary))_100%)]" />
 
-              <Card className="relative p-8 md:p-10 border-border/50 bg-card overflow-hidden transition-shadow duration-300 group-hover:shadow-2xl">
-                {/* Hover light reflection sweep */}
-                <div className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
-
+              <Card className="relative p-8 md:p-10 border-border/50 bg-card overflow-hidden">
                 <div className="relative flex flex-col md:flex-row items-start gap-6">
-                  {/* Glowing circular IEEE badge */}
-                  <div className="shrink-0 relative transition-transform duration-300 group-hover:rotate-3 group-hover:scale-105">
+                  <div className="shrink-0 relative">
                     <div className="p-5 rounded-full bg-primary/10 border border-primary/20 text-primary relative">
                       <IeeeLogo />
-                      {/* Glow ring */}
-                      <div className="absolute inset-0 rounded-full border border-primary/30 animate-pulse" />
+                      <div className="absolute inset-0 rounded-full border border-primary/30" />
                     </div>
                   </div>
 
