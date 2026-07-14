@@ -221,8 +221,6 @@ const Experience = () => {
                   }
                 >
                   <div className="group relative rounded-lg">
-                    {/* Animated gradient border */}
-                    <div className="pointer-events-none absolute -inset-px rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 [background:conic-gradient(from_var(--angle,0deg),hsl(var(--primary))_0%,transparent_25%,hsl(var(--primary-glow))_50%,transparent_75%,hsl(var(--primary))_100%)] animate-[spin_6s_linear_infinite]" />
 
                     <Card className="relative p-6 border-border/50 bg-card overflow-hidden transition-shadow duration-300 group-hover:shadow-2xl group-hover:shadow-primary/20">
                       {/* Light reflection sweep */}
