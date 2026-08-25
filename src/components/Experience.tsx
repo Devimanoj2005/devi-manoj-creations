@@ -12,6 +12,15 @@ import {
 
 const experiences = [
   {
+    role: "Full Stack Developer Intern",
+    organization: "Kochi Digitals",
+    period: "6 months",
+    points: [
+      "Built and maintained full-stack web applications end-to-end, working across frontend, backend, and database layers.",
+      "Developed RESTful APIs, integrated third-party services, and optimised application performance for production workloads.",
+    ],
+  },
+  {
     role: "Software Developer Intern",
     organization: "Beyond Innovators",
     period: "3 months",
