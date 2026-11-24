@@ -14,6 +14,18 @@ interface ContactEmailRequest {
   message: string;
 }
 
+const escapeHtml = (value: string): string =>
+  value.replace(/[&<>"']/g, (character) => {
+    const replacements: Record<string, string> = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    };
+    return replacements[character] ?? character;
+  });
+
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
@@ -21,9 +33,43 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, message }: ContactEmailRequest = await req.json();
+    const payload: unknown = await req.json();
+    if (!payload || typeof payload !== "object") {
+      return new Response(JSON.stringify({ error: "Invalid contact form submission." }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
 
-    console.log("Received contact form submission:", { name, email });
+    const submitted = payload as Record<string, unknown>;
+    if (
+      typeof submitted.name !== "string" ||
+      typeof submitted.email !== "string" ||
+      typeof submitted.message !== "string"
+    ) {
+      return new Response(JSON.stringify({ error: "Invalid contact form submission." }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+
+    const { name, email, message }: ContactEmailRequest = {
+      name: submitted.name.trim(),
+      email: submitted.email.trim(),
+      message: submitted.message.trim(),
+    };
+
+    if (
+      !name || name.length > 120 || /[\r\n]/.test(name) ||
+      email.length > 254 || /[\r\n]/.test(email) ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+      !message || message.length > 5000
+    ) {
+      return new Response(JSON.stringify({ error: "Invalid contact form submission." }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
 
     // Send notification to your email using Resend API
     const emailResponse = await fetch("https://api.resend.com/emails", {
@@ -40,10 +86,10 @@ const handler = async (req: Request): Promise<Response> => {
         subject: `New Contact Form Submission from ${name}`,
         html: `
           <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+          <p><strong>Email:</strong> ${escapeHtml(email)}</p>
           <p><strong>Message:</strong></p>
-          <p>${message.replace(/\n/g, '<br>')}</p>
+          <p>${escapeHtml(message).replace(/\r?\n/g, "<br>")}</p>
         `,
       }),
     });
