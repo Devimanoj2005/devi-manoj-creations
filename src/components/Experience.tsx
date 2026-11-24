@@ -1,6 +1,8 @@
 import { Briefcase } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useRef } from "react";
+import kochiDigitalsLogo from "@/assets/kochidigitals-logo.png.asset.json";
+import muLearnLogo from "@/assets/mulearn-logo.png.asset.json";
 import {
   motion,
   useReducedMotion,
@@ -14,6 +16,7 @@ const experiences = [
   {
     role: "Full Stack Developer Intern",
     organization: "Kochi Digitals",
+    logo: kochiDigitalsLogo.url,
     period: "6 months",
     points: [
       "Built and maintained full-stack web applications end-to-end, working across frontend, backend, and database layers.",
@@ -32,6 +35,7 @@ const experiences = [
   {
     role: "Frontend Intern",
     organization: "MuLearn",
+    logo: muLearnLogo.url,
     period: "6 months",
     points: [
       "Developed and improved UI components using React.js; built responsive, accessible web applications with cross-functional teams.",
@@ -236,17 +240,29 @@ const Experience = () => {
                       <div className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
 
                       <div className="relative flex items-start gap-4">
-                        <motion.div
-                          className="p-3 bg-primary/10 rounded-xl"
-                          whileHover={
-                            prefersReduced
-                              ? undefined
-                              : { rotate: 12, scale: 1.1, backgroundColor: "hsl(var(--primary) / 0.2)" }
-                          }
-                          transition={{ type: "spring", stiffness: 260, damping: 15 }}
-                        >
-                          <Briefcase className="h-6 w-6 text-primary" />
-                        </motion.div>
+                        {item.logo ? (
+                          <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border/50 bg-muted/40">
+                            <img
+                              src={item.logo}
+                              alt={`${item.organization} logo`}
+                              className="h-full w-full object-contain"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </div>
+                        ) : (
+                          <motion.div
+                            className="p-3 bg-primary/10 rounded-xl"
+                            whileHover={
+                              prefersReduced
+                                ? undefined
+                                : { rotate: 12, scale: 1.1, backgroundColor: "hsl(var(--primary) / 0.2)" }
+                            }
+                            transition={{ type: "spring", stiffness: 260, damping: 15 }}
+                          >
+                            <Briefcase className="h-6 w-6 text-primary" />
+                          </motion.div>
+                        )}
                         <div className="flex-1">
                           <h3 className="text-xl font-bold text-foreground">
                             {item.role}
