@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Devi Manoj
+              Devi
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Computer Science student passionate about creating meaningful web applications and exploring new technologies.
@@ -73,7 +73,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground text-center md:text-left">
-            © {currentYear} Devi Manoj. All rights reserved.
+            © {currentYear} Devi. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1.5">
             Built with <Heart className="h-3.5 w-3.5 text-destructive inline fill-current" /> using React & Tailwind CSS

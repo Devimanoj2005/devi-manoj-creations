@@ -7,28 +7,6 @@ import iitMadrasPhoto from "@/assets/certificates/iit-madras-workshop.jpeg";
 
 const achievements = [
   {
-    title: "🥇 1st Prize – She Builds Hackathon",
-    event: "She Builds Hackathon by CSEA, SJCET Palai",
-    team: "Team Delusion",
-    description:
-      "Our team Delusion proudly clinched 1st Prize at the She Builds Hackathon, a girls-only innovation challenge organized by the Computer Science and Engineering Association (CSEA), SJCET Palai. The event brought together 100+ enthusiastic participants forming around 30 teams, all working towards innovative solutions and creative ideas.",
-    image: shebuildsPhoto,
-    color: "text-pink-500",
-    accent: "from-pink-500 to-rose-500",
-    bgGlow: "bg-pink-500/10",
-  },
-  {
-    title: "🥈 Runner-Up – Smart India Hackathon",
-    event: "Smart India Hackathon (SIH) 2025",
-    team: "Top 3 Finalist",
-    description:
-      "Achieved Runner-Up position in the preliminary level of the Smart India Hackathon (SIH). Demonstrated strong technical skills, innovative thinking, and teamwork by developing a solution aligned with real-world problem statements.",
-    image: sihPhoto,
-    color: "text-amber-500",
-    accent: "from-amber-500 to-yellow-500",
-    bgGlow: "bg-amber-500/10",
-  },
-  {
     title: "🎓 Selected for IIT Madras Workshop",
     event: "3-Day Workshop at IIT Madras",
     team: "Selected Participant",

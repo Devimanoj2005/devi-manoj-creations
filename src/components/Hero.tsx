@@ -24,13 +24,13 @@ const Hero = () => {
             <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 animate-fade-in-up opacity-0" style={{ animationDelay: '0.4s' }}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground">
                 Hi, I'm<br />
-                <span className="font-black">Devi Manoj</span>
+                <span className="font-black">Devi</span>
               </h1>
               
               <div className="relative group/photo flex-shrink-0 animate-float">
                 <img 
                   src={profilePhoto} 
-                  alt="Devi Manoj"
+                  alt="Devi"
                   className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full object-cover border-2 border-foreground/20 shadow-lg transition-all duration-500 ease-out group-hover/photo:scale-110 group-hover/photo:rotate-6 group-hover/photo:border-foreground/40 group-hover/photo:shadow-xl"
                 />
               </div>

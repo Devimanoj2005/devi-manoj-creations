@@ -60,7 +60,7 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
           Hi, I'm
         </p>
         <h1 className="intro-name text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-white tracking-tight">
-          Devi Manoj
+          Devi
         </h1>
       </div>
 
