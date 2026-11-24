@@ -243,7 +243,12 @@ const Experience = () => {
                         {item.logo ? (
                           <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border/50 bg-muted/40">
                             <img
-                              src={item.logo}
+                              src={new URL(
+                                item.logo,
+                                import.meta.env.DEV
+                                  ? "https://devi-manoj-creations.lovable.app"
+                                  : window.location.origin,
+                              ).href}
                               alt={`${item.organization} logo`}
                               className="h-full w-full object-contain"
                               loading="lazy"
