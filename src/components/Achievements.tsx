@@ -1,8 +1,6 @@
 import { Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import shebuildsPhoto from "@/assets/certificates/shebuilds-hackathon.jpeg";
-import sihPhoto from "@/assets/certificates/sih-certificate.png";
 import iitMadrasPhoto from "@/assets/certificates/iit-madras-workshop.jpeg";
 
 const achievements = [
