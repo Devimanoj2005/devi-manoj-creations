@@ -1,0 +1,1 @@
+- Keep separately addressable portfolio experiences in `src/pages` and register them as explicit React Router routes so they can be visited directly.

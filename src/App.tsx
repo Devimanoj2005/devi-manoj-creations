@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Index from "./pages/Index";
 import ProjectDetail from "./pages/ProjectDetail";
+import DeviProfile from "./pages/DeviProfile";
 import NotFound from "./pages/NotFound";
 import AnimatedCursor from "@/components/AnimatedCursor";
 import CursorSpotlight from "@/components/CursorSpotlight";
@@ -36,6 +37,7 @@ const AppRoutes = () => {
       <div className={revealContent ? "intro-content-reveal" : "opacity-0"}>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/devi" element={<DeviProfile />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

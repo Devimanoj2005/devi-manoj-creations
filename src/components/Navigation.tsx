@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
@@ -72,6 +73,10 @@ const Navigation = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
+              <Link to="/devi" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-300 relative group">
+                Profile
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              </Link>
               <ThemeToggle />
             </div>
 
@@ -125,6 +130,13 @@ const Navigation = () => {
               {link.name}
             </a>
           ))}
+          <Link
+            to="/devi"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-2xl font-semibold text-foreground hover:text-primary transition-colors duration-300 animate-fade-in"
+          >
+            Profile
+          </Link>
         </div>
       </div>
     </>

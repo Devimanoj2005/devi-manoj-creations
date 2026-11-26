@@ -6,4 +6,4 @@
 - [x] Update only the three requested finding records and confirm the final state.
 - [x] Remove the first two hackathon achievement entries.
 - [x] Change the visible portfolio name to Devi.
-- [ ] Define the new page content and purpose (awaiting the user's details).
+- [ ] Create a standalone “I'm Devi;” profile page with known portfolio details and a clear path from the homepage.
