@@ -45,7 +45,7 @@ const DeviProfile = () => (
 
     <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-5 pb-12 pt-6 sm:px-8 sm:pt-12 lg:px-12 lg:pt-16">
       <section className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(19rem,0.85fr)] lg:gap-16">
-        <div className="order-2 lg:order-1">
+        <div className="order-1">
           <p className="mb-5 text-sm font-medium text-muted-foreground">
             Devi Manoj <span className="mx-2 text-border">/</span> Full Stack Developer
           </p>
@@ -71,7 +71,7 @@ const DeviProfile = () => (
           </div>
         </div>
 
-        <div className="order-1 mx-auto w-full max-w-sm lg:order-2 lg:max-w-none">
+        <div className="order-2 mx-auto w-full max-w-sm lg:max-w-none">
           <div className="relative overflow-hidden rounded-lg border border-border bg-card p-2 shadow-lg">
             <img
               src={profilePhoto}
